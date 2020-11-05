@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bgc">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="轻松复习"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"/>-->
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--      <LinearLayout-->
+<!--          android:layout_width="0dp"-->
+<!--          android:layout_weight="1"-->
+<!--          android:layout_height="260dp"-->
+<!--          android:layout_marginLeft="20dp"-->
+<!--          android:layout_marginRight="10dp"-->
+<!--          android:background="@drawable/login_edittext"-->
+<!--          android:orientation="vertical">-->
+
+<!--          <RelativeLayout-->
+<!--              android:layout_width="match_parent"-->
+<!--              android:layout_height="wrap_content">-->
+
+<!--              <TextView-->
+<!--                  android:id="@+id/fuxi_tv_listen"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:text="单词连连看"-->
+<!--                  android:textSize="16sp"-->
+<!--                  android:textColor="@color/black"-->
+<!--                  android:textStyle="bold"-->
+<!--                  android:layout_marginLeft="25dp"-->
+<!--                  android:layout_marginTop="25sp"-->
+<!--                  />-->
+
+<!--              <TextView-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:layout_below="@+id/fuxi_tv_listen"-->
+<!--                  android:text="随时听"-->
+<!--                  android:textColor="@color/black"-->
+<!--                  android:layout_marginLeft="25dp"-->
+<!--                  android:layout_marginTop="10dp"-->
+<!--                  />-->
+
+<!--              <ImageView-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:src="@mipmap/earphone"-->
+<!--                  android:layout_toRightOf="@+id/fuxi_tv_listen"-->
+<!--                  android:layout_marginTop="25dp"-->
+<!--                  android:layout_marginLeft="10dp"/>-->
+
+<!--              <ImageView-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:src="@mipmap/duck"-->
+<!--                  android:layout_alignParentBottom="true"/>-->
+
+<!--          </RelativeLayout>-->
+
+
+<!--      </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="260dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/login_edittext"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                >-->
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/fuxi_tv_remember"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="单词速记"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_marginTop="25sp"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@+id/fuxi_tv_remember"-->
+<!--                        android:text="快速过关"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:src="@mipmap/book"-->
+<!--                        android:layout_toRightOf="@+id/fuxi_tv_remember"-->
+<!--                        android:layout_marginTop="25dp"-->
+<!--                        android:layout_marginLeft="10dp"/>-->
+
+
+<!--                </RelativeLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/login_edittext"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                >-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/fuxi_tv_plan"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="今日计划"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_marginTop="25sp"-->
+<!--                        />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@+id/fuxi_tv_plan"-->
+<!--                        android:text="再看一次"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:src="@mipmap/plane"-->
+<!--                        android:layout_toRightOf="@+id/fuxi_tv_plan"-->
+<!--                        android:layout_marginTop="25dp"-->
+<!--                        android:layout_marginLeft="10dp"/>-->
+
+
+<!--                </RelativeLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+</LinearLayout>
