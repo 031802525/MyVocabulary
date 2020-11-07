@@ -1,9 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fun.LockScreenActivity">
+    android:background="#f2f3f8"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:gravity="center_horizontal"
+        android:text="v.商议"
+        android:textColor="@color/deepblue"
+        android:textStyle="bold"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/login_edittext"
+        android:editable="false"
+        android:gravity="center_horizontal"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:background="@drawable/login_edittext"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/bt_1_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:text="c"
+                android:background="#fff"
+                android:textColor="@color/deepblue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:id="@+id/bt_1_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="o"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+
+            <Button
+                android:id="@+id/bt_1_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="n"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+
+            <Button
+                android:id="@+id/bt_1_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="n"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/bt_2_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="f"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+
+            <Button
+                android:id="@+id/bt_2_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="e"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+
+            <Button
+                android:id="@+id/bt_2_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="r"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+
+            <Button
+                android:id="@+id/bt_2_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#fff"
+                android:text="r"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/deepblue"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/login_edittext"
+            android:text="解锁"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>
