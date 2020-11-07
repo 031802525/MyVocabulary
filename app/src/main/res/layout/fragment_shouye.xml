@@ -61,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="33dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,12 +71,12 @@
                         android:id="@+id/shouye_tv_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:text="Insist"
-                        android:textStyle="bold"
-                        android:textSize="40sp"
                         android:textColor="@color/black"
-                        />
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/shouye_tv_detail"
                         android:layout_width="wrap_content"
@@ -83,205 +84,217 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginBottom="15dp"
                         android:text="Everything that kills me makes me feel alive."
-                        android:textSize="16sp"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/shouye_rl_begin"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/shouye_rl_head"
-                android:background="@mipmap/background_longmao">
-
-                <TextView
-                    android:id="@+id/shouye_tv_showbook"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="12dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="7dp"
-                    android:text="考研"
-                    android:textColor="#000000"
-                    android:layout_marginTop="10dp"
-                    android:textSize="12sp"
-                    android:background="@drawable/login_edittext"
-                    android:layout_toLeftOf="@id/shouye_tv_wordnum"/>
-
-                <TextView
-                    android:id="@+id/shouye_tv_wordnum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingStart="12dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="7dp"
-                    android:text="1"
-                    android:textColor="#000000"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:textSize="12sp"
-                    android:background="@drawable/login_edittext"
-                    android:layout_marginLeft="10dp"/>
-
-                <RelativeLayout
-                    android:id="@+id/shouye_rl_beginbgc"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/shouye_btn_begin"
-                    >
-                    <TextView
-                        android:id="@+id/shouye_tv_begin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="开始背单词"
-                        android:layout_centerInParent="true"
-                        android:textSize="23sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        />
-
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/shouye_rl_search"
-                android:layout_width="match_parent"
+                android:id="@+id/shouye_rl_main"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/shouye_rl_begin"
-                android:layout_marginTop="10dp">
+                android:layout_below="@+id/shouye_rl_head">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
                     >
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/lotus"/>
+                        android:layout_height="260dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/shouye_beginbtn"
+                        android:paddingBottom="10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/fuxi_tv_listen"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="开始背单词"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="25sp"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fuxi_tv_listen"
+                                android:text="坚持就是胜利！"
+                                android:textColor="@color/white"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_alignParentBottom="true"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="四级词汇"
+                                    android:padding="5dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginLeft="25dp"
+                                    android:background="@drawable/login_edittext"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="100"
+                                    android:padding="5dp"
+                                    android:textColor="@color/black"
+                                    android:layout_marginLeft="15dp"
+                                    android:background="@drawable/login_edittext"
+                                    />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_gravity="center"
                         android:layout_width="0dp"
-                        android:layout_weight="3"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@drawable/login_edittext"
-                        >
-                        <EditText
-                            android:id="@+id/shouye_ed_searchedit"
-                            android:layout_width="0dp"
-                            android:layout_weight="3"
-                            android:layout_height="50dp"
-                            android:hint="搜索"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="10dp"
-                            android:background="@null"
-                            />
+                        android:layout_weight="1"
+                        android:layout_height="260dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
 
-                        <ImageButton
-                            android:id="@+id/shouye_ib_search"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:src="@mipmap/search"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="-10dp"
-                            android:background="@color/white"
-                            />
+                            android:background="@drawable/login_edittext"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/fuxi_tv_remember"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="单词搜搜搜"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="25sp"
+                                    />
+
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/search"
+                                    android:layout_toRightOf="@+id/fuxi_tv_remember"
+                                    android:layout_marginTop="25dp"
+                                    android:layout_marginLeft="10dp"/>
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shouye_wordlistbtn"
+                            android:layout_marginTop="10dp"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/fuxi_tv_plan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="单词夹"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="25dp"
+                                    android:layout_marginTop="25sp"
+                                    />
+
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/book"
+                                    android:layout_toRightOf="@+id/fuxi_tv_plan"
+                                    android:layout_marginTop="25dp"
+                                    android:layout_marginLeft="10dp"/>
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
 
             </RelativeLayout>
-
-
             <RelativeLayout
-                android:id="@+id/shouye_rl_vocabulary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/shouye_rl_search"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="horizontal"
-                    >
-                    <Button
-                        android:id="@+id/shouye_btn_word"
-                        android:layout_width="0dp"
-                        android:layout_weight="2"
-                        android:layout_height="50dp"
-                        android:background="@drawable/shouye_btn_danci"
-                        android:text="单词夹"
+                android:layout_height="match_parent"
+                android:background="@drawable/login_edittext"
+                android:layout_below="@id/shouye_rl_main"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                >
+                    <TextView
+                        android:id="@+id/quwei_tv_lock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:text="翻译"
+                        android:textColor="#000"
                         android:textSize="18sp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
                         />
 
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/rabbit"/>
-
-                </LinearLayout>
-
-
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/translate" />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/shouye_rl_vocabulary"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/translate"
-                        android:layout_gravity="center"/>
-                    <EditText
-                        android:id="@+id/shouye_btn_translate"
-                        android:layout_width="0dp"
-                        android:layout_weight="2"
-                        android:layout_height="50dp"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:background="@drawable/login_edittext"
-                        android:hint="翻译"
-                        android:textSize="18sp"
-                        android:layout_marginRight="20dp"
-                        />
-
-                </LinearLayout>
-
-
-
-            </RelativeLayout>
 
         </RelativeLayout>
 

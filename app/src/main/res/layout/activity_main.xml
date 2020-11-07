@@ -13,8 +13,8 @@
         android:text="忆词"
         android:textSize="20sp"
         android:gravity="center"
-        android:background="#d3e3e2"
-        android:textColor="#b78d7f"
+        android:background="@color/deepblue"
+        android:textColor="@color/white"
         android:padding="10dp"
         />
 
@@ -22,7 +22,7 @@
         android:id="@+id/main_rg"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#d3e3e2"
+        android:background="@color/white"
         android:layout_alignParentBottom="true"
         android:padding="3dp"
         android:orientation="horizontal"
