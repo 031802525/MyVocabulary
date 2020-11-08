@@ -12,7 +12,7 @@
     <RelativeLayout
         android:id="@+id/linkgame_rl_head"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/dp_55"
         android:background="@color/deepblue">
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                     android:text="01 : 59"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="@dimen/sp_18"/>
 
             </LinearLayout>
             <LinearLayout
@@ -49,8 +49,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp">
+                android:layout_marginRight="@dimen/dp_8"
+                android:layout_marginLeft="@dimen/dp_8">
 
                 <ImageView
                     android:layout_width="0dp"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="单词夹"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="@dimen/sp_18"/>
 
             </LinearLayout>
             <LinearLayout
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:text="退出"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="@dimen/sp_18"/>
 
             </LinearLayout>
 
@@ -110,24 +110,24 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/dp_8">
                 <ListView
                     android:id="@+id/linkgame_lv_leftwordspell"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:dividerHeight="10dp"
+                    android:dividerHeight="@dimen/dp_8"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="@dimen/dp_8">
                 <ListView
                     android:id="@+id/linkgame_lv_rightwordtranslate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:dividerHeight="10dp"/>
+                    android:dividerHeight="@dimen/dp_8"/>
             </LinearLayout>
 
         </LinearLayout>

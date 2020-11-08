@@ -16,11 +16,11 @@
             android:layout_height="wrap_content"
             android:text="轻松复习"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="@dimen/sp_23"
             android:textColor="@color/black"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginLeft="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginBottom="@dimen/dp_18"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,9 +31,9 @@
       <LinearLayout
           android:layout_width="0dp"
           android:layout_weight="1"
-          android:layout_height="260dp"
-          android:layout_marginLeft="20dp"
-          android:layout_marginRight="10dp"
+          android:layout_height="@dimen/dp_240"
+          android:layout_marginLeft="@dimen/dp_18"
+          android:layout_marginRight="@dimen/dp_8"
           android:background="@drawable/login_edittext"
           android:orientation="vertical">
 
@@ -46,11 +46,11 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="听音辩词"
-                  android:textSize="16sp"
+                  android:textSize="@dimen/sp_14"
                   android:textColor="@color/black"
                   android:textStyle="bold"
-                  android:layout_marginLeft="25dp"
-                  android:layout_marginTop="25sp"
+                  android:layout_marginLeft="@dimen/dp_23"
+                  android:layout_marginTop="@dimen/sp_23"
                   />
 
               <TextView
@@ -59,8 +59,8 @@
                   android:layout_below="@+id/fuxi_tv_listen"
                   android:text="随时听"
                   android:textColor="@color/black"
-                  android:layout_marginLeft="25dp"
-                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="@dimen/dp_23"
+                  android:layout_marginTop="@dimen/dp_10"
                   />
 
               <ImageView
@@ -68,8 +68,8 @@
                   android:layout_height="wrap_content"
                   android:src="@mipmap/earphone"
                   android:layout_toRightOf="@+id/fuxi_tv_listen"
-                  android:layout_marginTop="25dp"
-                  android:layout_marginLeft="10dp"/>
+                  android:layout_marginTop="@dimen/dp_23"
+                  android:layout_marginLeft="@dimen/dp_10"/>
 
 
           </RelativeLayout>
@@ -80,9 +80,9 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="260dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="@dimen/dp_240"
+            android:layout_marginRight="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_10"
             android:orientation="vertical">
 
             <LinearLayout
@@ -90,7 +90,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/login_edittext"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimen/dp_10"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -101,11 +101,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="单词速记"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/sp_14"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25sp"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_marginTop="@dimen/sp_23"
                         />
 
                     <TextView
@@ -114,8 +114,8 @@
                         android:layout_below="@+id/fuxi_tv_remember"
                         android:text="快速过关"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_marginTop="@dimen/dp_10"
                         />
 
                     <ImageView
@@ -123,8 +123,8 @@
                         android:layout_height="wrap_content"
                         android:src="@mipmap/book"
                         android:layout_toRightOf="@+id/fuxi_tv_remember"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:layout_marginTop="@dimen/dp_23"
+                        android:layout_marginLeft="@dimen/dp_10"/>
 
 
                 </RelativeLayout>
@@ -136,7 +136,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/login_edittext"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/dp_10"
                 >
 
                 <RelativeLayout
@@ -148,11 +148,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="今日计划"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/sp_14"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25sp"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_marginTop="@dimen/sp_23"
                         />
 
                     <TextView
@@ -161,8 +161,8 @@
                         android:layout_below="@+id/fuxi_tv_plan"
                         android:text="再看一次"
                         android:textColor="@color/black"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_marginTop="@dimen/dp_10"
                         />
 
                     <ImageView
@@ -170,8 +170,8 @@
                         android:layout_height="wrap_content"
                         android:src="@mipmap/plane"
                         android:layout_toRightOf="@+id/fuxi_tv_plan"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:layout_marginTop="@dimen/dp_23"
+                        android:layout_marginLeft="@dimen/dp_10"/>
 
 
                 </RelativeLayout>

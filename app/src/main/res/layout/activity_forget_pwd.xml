@@ -13,15 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp_8"
         >
         <ImageView
             android:id="@+id/forget_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/leftback"
-            android:padding="10dp"
-            android:layout_marginLeft="5dp"
+            android:padding="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_5"
 
             />
         <TextView
@@ -30,7 +30,7 @@
             android:text="重置密码"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/sp_18"
             />
 
     </RelativeLayout>
@@ -39,20 +39,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="@dimen/dp_30">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/logo"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/dp_20"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/dp_8"
             android:text="忆词"
-            android:textSize="20sp"
+            android:textSize="@dimen/sp_18"
             android:textColor="@color/black"
             />
     </LinearLayout>
@@ -63,11 +63,11 @@
         android:gravity="center">
 
         <RelativeLayout
-            android:layout_width="280dp"
+            android:layout_width="@dimen/dp_250"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="@dimen/dp_30"
             android:background="@drawable/login_edittext"
 
             >
@@ -77,29 +77,29 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/me"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_8"
                 />
 
             <EditText
                 android:id="@+id/forget_username"
-                android:layout_width="230dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_45"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="@dimen/dp_10"
                 android:background="@null"
                 android:hint="请输入用户名"
-                android:paddingLeft="5dp"
+                android:paddingLeft="@dimen/dp_5"
                 />
 
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_width="280dp"
+            android:layout_width="@dimen/dp_250"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/dp_20"
             android:background="@drawable/login_edittext"
 
             >
@@ -107,37 +107,37 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_8"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/lock" />
 
             <EditText
                 android:id="@+id/forget_pwd"
-                android:layout_width="230dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_45"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="@dimen/dp_10"
                 android:background="@null"
                 android:hint="请输入新的密码"
                 android:inputType="textPassword"
-                android:paddingLeft="5dp"
+                android:paddingLeft="@dimen/dp_5"
                 />
 
         </RelativeLayout>
 
         <Button
             android:id="@+id/forget_btn"
-            android:layout_width="280dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="@dimen/dp_45"
             android:layout_marginTop="20dp"
             android:text="点击重置"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/white"
             android:background="@drawable/login_btn"
             />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="280dp"
+        android:layout_width="@dimen/dp_250"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:orientation="horizontal">
@@ -147,9 +147,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="直接获取密码？"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="15dp"
-            android:textSize="14sp"
+            android:layout_marginLeft="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_13"
+            android:textSize="@dimen/sp_12"
             android:textColor="@color/white"
             />
 

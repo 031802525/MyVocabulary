@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:background="#f2f3f8"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="@dimen/dp_8">
 
     <TextView
         android:id="@+id/tv_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="@dimen/sp_38"
         android:gravity="center_horizontal"
         android:text="v.商议"
         android:textColor="@color/deepblue"
@@ -20,24 +20,24 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginTop="@dimen/dp_5"
         android:background="@drawable/login_edittext"
         android:editable="false"
         android:gravity="center_horizontal"
-        android:textSize="30sp" />
+        android:textSize="@dimen/sp_28" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/dp_45"
         android:orientation="vertical"
         android:background="@drawable/login_edittext"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingLeft="@dimen/dp_38"
+        android:paddingRight="@dimen/dp_38"
+        android:paddingTop="@dimen/dp_18"
+        android:paddingBottom="@dimen/dp_18"
         >
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,48 +48,48 @@
 
             <Button
                 android:id="@+id/bt_1_1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:text="c"
                 android:background="#fff"
                 android:textColor="@color/deepblue"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 />
 
             <Button
                 android:id="@+id/bt_1_2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="o"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
 
             <Button
                 android:id="@+id/bt_1_3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="n"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
 
             <Button
                 android:id="@+id/bt_1_4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="n"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
@@ -103,48 +103,48 @@
 
             <Button
                 android:id="@+id/bt_2_1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="f"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
 
             <Button
                 android:id="@+id/bt_2_2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="e"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
 
             <Button
                 android:id="@+id/bt_2_3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="r"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
 
             <Button
                 android:id="@+id/bt_2_4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
                 android:layout_gravity="center_horizontal"
                 android:background="#fff"
                 android:text="r"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 android:textColor="@color/deepblue"
                 />
@@ -167,7 +167,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/login_edittext"
             android:text="解锁"
-            android:textSize="20sp" />
+            android:textSize="@dimen/sp_18" />
     </RelativeLayout>
 
 

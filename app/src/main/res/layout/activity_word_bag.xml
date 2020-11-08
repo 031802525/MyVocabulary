@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/wordbag_rl_head"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="@dimen/dp_55">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,20 +18,20 @@
             android:orientation="horizontal"
             android:background="@color/deepblue">
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
                 android:src="@mipmap/gamebook"
                 android:layout_gravity="center"
-                android:layout_marginLeft="15dp"/>
+                android:layout_marginLeft="@dimen/dp_10"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="单词夹"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_18"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="@dimen/dp_5"/>
 
         </LinearLayout>
 
@@ -42,14 +42,14 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/wordbag_rl_head"
         android:background="@drawable/login_edittext"
-        android:layout_margin="15dp">
+        android:layout_margin="@dimen/dp_10">
 
        <ListView
            android:id="@+id/wordbag_lv_wordlist"
-           android:layout_margin="5dp"
+           android:layout_margin="@dimen/dp_10"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:dividerHeight="5dp"/>
+           android:dividerHeight="@dimen/dp_5"/>
 
     </RelativeLayout>
     <ImageView
@@ -59,7 +59,7 @@
         android:src="@mipmap/gameadd"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/dp_18"
         />
 
 </RelativeLayout>

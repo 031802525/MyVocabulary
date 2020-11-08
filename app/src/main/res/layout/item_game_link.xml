@@ -5,9 +5,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_45"
         android:text="beautiful"
-        android:textSize="20sp"
+        android:textSize="@dimen/sp_18"
         android:gravity="center"
         android:background="@drawable/login_edittext"/>
 

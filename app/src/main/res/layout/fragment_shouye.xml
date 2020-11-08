@@ -60,7 +60,7 @@
                 android:id="@+id/shouye_rl_head"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="33dp">
+                android:layout_marginTop="@dimen/dp_30">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -71,20 +71,20 @@
                         android:id="@+id/shouye_tv_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="@dimen/dp_18"
                         android:text="Insist"
                         android:textColor="@color/black"
-                        android:textSize="40sp"
+                        android:textSize="@dimen/sp_36"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/shouye_tv_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="@dimen/dp_13"
+                        android:layout_marginBottom="@dimen/dp_13"
                         android:text="Everything that kills me makes me feel alive."
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/sp_14" />
 
                 </LinearLayout>
 
@@ -99,19 +99,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="20dp"
-                    >
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_230"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:layout_marginRight="@dimen/dp_8"
                         android:layout_weight="1"
-                        android:layout_height="260dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="10dp"
                         android:background="@drawable/shouye_beginbtn"
-                        android:paddingBottom="10dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/dp_8">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -121,49 +120,56 @@
                                 android:id="@+id/fuxi_tv_listen"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_23"
+                                android:layout_marginTop="@dimen/dp_23"
                                 android:text="开始背单词"
-                                android:textSize="16sp"
                                 android:textColor="@color/black"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginTop="25sp"
-                                />
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/fuxi_tv_listen"
+                                android:layout_marginLeft="@dimen/dp_23"
+                                android:layout_marginTop="@dimen/dp_10"
                                 android:text="坚持就是胜利！"
-                                android:textColor="@color/white"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginTop="10dp"
-                                />
-                            <LinearLayout
+                                android:textColor="@color/white" />
+
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:layout_alignParentBottom="true"
                                 >
 
-                                <TextView
-                                    android:layout_width="wrap_content"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="四级词汇"
-                                    android:padding="5dp"
-                                    android:textColor="@color/black"
-                                    android:layout_marginLeft="25dp"
-                                    android:background="@drawable/login_edittext"
-                                    />
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="100"
-                                    android:padding="5dp"
-                                    android:textColor="@color/black"
-                                    android:layout_marginLeft="15dp"
-                                    android:background="@drawable/login_edittext"
-                                    />
-                            </LinearLayout>
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/login_edittext"
+                                        android:padding="@dimen/dp_5"
+                                        android:text="四级词汇"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/login_edittext"
+                                        android:padding="@dimen/dp_5"
+                                        android:text="100"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+
 
 
                         </RelativeLayout>
@@ -173,19 +179,19 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_230"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_20"
                         android:layout_weight="1"
-                        android:layout_height="260dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="10dp"
                         android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
+                            android:layout_marginBottom="@dimen/dp_10"
                             android:layout_weight="1"
-                            android:background="@drawable/login_edittext"
-                            android:layout_marginBottom="10dp"
-                            >
+                            android:background="@drawable/login_edittext">
+
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
@@ -194,23 +200,21 @@
                                     android:id="@+id/fuxi_tv_remember"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dp_23"
+                                    android:layout_marginTop="@dimen/dp_23"
                                     android:text="单词搜搜搜"
-                                    android:textSize="16sp"
                                     android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    android:layout_marginLeft="25dp"
-                                    android:layout_marginTop="25sp"
-                                    />
-
+                                    android:textSize="@dimen/sp_14"
+                                    android:textStyle="bold" />
 
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:src="@mipmap/search"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_23"
                                     android:layout_toRightOf="@+id/fuxi_tv_remember"
-                                    android:layout_marginTop="25dp"
-                                    android:layout_marginLeft="10dp"/>
+                                    android:src="@mipmap/search" />
 
 
                             </RelativeLayout>
@@ -220,10 +224,9 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/dp_10"
                             android:layout_weight="1"
-                            android:background="@drawable/shouye_wordlistbtn"
-                            android:layout_marginTop="10dp"
-                            >
+                            android:background="@drawable/shouye_wordlistbtn">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -233,23 +236,21 @@
                                     android:id="@+id/fuxi_tv_plan"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dp_23"
+                                    android:layout_marginTop="@dimen/dp_23"
                                     android:text="单词夹"
-                                    android:textSize="16sp"
                                     android:textColor="@color/black"
-                                    android:textStyle="bold"
-                                    android:layout_marginLeft="25dp"
-                                    android:layout_marginTop="25sp"
-                                    />
-
+                                    android:textSize="@dimen/sp_14"
+                                    android:textStyle="bold" />
 
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:src="@mipmap/book"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_23"
                                     android:layout_toRightOf="@+id/fuxi_tv_plan"
-                                    android:layout_marginTop="25dp"
-                                    android:layout_marginLeft="10dp"/>
+                                    android:src="@mipmap/book" />
 
 
                             </RelativeLayout>
@@ -266,20 +267,20 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/login_edittext"
                 android:layout_below="@id/shouye_rl_main"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:padding="10dp"
+                android:layout_marginTop="@dimen/dp_13"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:padding="@dimen/dp_10"
                 >
                     <TextView
                         android:id="@+id/quwei_tv_lock"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/dp_23"
+                        android:layout_marginTop="@dimen/dp_13"
                         android:text="翻译"
                         android:textColor="#000"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/sp_16"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         />
@@ -290,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
                     android:src="@mipmap/translate" />
 
             </RelativeLayout>

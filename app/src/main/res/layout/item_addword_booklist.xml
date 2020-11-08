@@ -21,30 +21,30 @@
             android:layout_height="wrap_content"
             android:text="收藏夹单词"
             android:textColor="@color/grey"
-            android:textSize="20sp"
+            android:textSize="@dimen/sp_18"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/dp_10"
             />
 
 
     </LinearLayout>
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_33"
             android:src="@mipmap/add"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/dp_10"
             />
 
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dp_1"
         android:background="@color/grey"
         android:layout_below="@+id/worditem"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_10"
         />
 
 </RelativeLayout>
