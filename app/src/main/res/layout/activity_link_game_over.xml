@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fun.activity.LinkGameOverActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/gameover_rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/deepblue">
+
+        <ImageView
+            android:id="@+id/gameover_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/leftback"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="游戏结束"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/gameover_iv_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/gameover_btn_restart"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_120"
+        android:background="@drawable/shouye_btn_begin"
+        android:layout_centerInParent="true"
+        android:text="Go"
+        android:textSize="@dimen/sp_20"
+        android:textAllCaps="false"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shouye_wordlistbtn"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_10">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="提示"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:lineSpacingExtra="@dimen/dp_3"
+                android:layout_marginLeft="@dimen/dp_35"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_25"
+                android:text="@string/perDialog"
+                android:textSize="@dimen/sp_10"
+                android:textColor="@color/font_common_1"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/commom_background"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gameover_tv_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_dialog_left_white"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:text="算了"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/font_common_2"/>
+
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/commom_background"/>
+
+                <TextView
+                    android:id="@+id/gameover_tv_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_dialog_right_white"
+                    android:gravity="center"
+                    android:layout_weight="1.0"
+                    android:text="再来一局"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/font_blue"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

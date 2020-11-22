@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    存放自定义view对应的自定义属性-->
+    <declare-styleable name="ClockView">
+        <attr name="clockColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="drawableSwitch">
+        <attr name="radius" format="dimension" />
+        <attr name="switchOnColor" format="color" />
+        <attr name="switchOffColor" format="color" />
+        <attr name="circleColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="isSwitchOn" format="boolean"/>
+    </declare-styleable>
+</resources>

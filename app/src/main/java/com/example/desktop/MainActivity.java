@@ -1,35 +1,77 @@
 package com.example.desktop;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.desktop.Fun.activity.AddAlarmActivity;
+import com.example.desktop.Fun.bean.EverydaySentenceBean;
+import com.example.desktop.Fun.service.AlarmService;
+import com.example.desktop.Fun.service.LockScreenService;
+import com.example.desktop.Fun.util.LoadDataAsyncTask;
+import com.example.desktop.Fun.util.ServiceUtil;
+import com.example.desktop.Fun.util.URLContent;
 import com.example.desktop.frag.FuxiFragment;
 import com.example.desktop.frag.QuweiFragment;
 import com.example.desktop.frag.MeFragment;
 import com.example.desktop.frag.ShouyeFragment;
+import com.google.gson.Gson;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+import java.util.Calendar;
+
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener , LoadDataAsyncTask.OnGetNetDataListener {
 
     RadioGroup mainRg;
     Fragment ShouyeFrag, QuweiFrag,FuxiFrag,MeFrag;
     private FragmentManager manager;
     public static boolean needRefresh = true;
     private static final String TAG = "MainActivity";
+    SharedPreferences preferences,timesp;
+    SharedPreferences.Editor editor,timeeditor;
+    Calendar calendar = Calendar.getInstance();
+    private long oneDaytimeMM = 8640000;
+    int year = calendar.get(Calendar.YEAR);
+    int month = calendar.get(Calendar.MONTH)+1;
+    int day = calendar.get(Calendar.DAY_OF_MONTH);
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    int minute = calendar.get(Calendar.MINUTE);
+    int second = calendar.get(Calendar.SECOND);
 
+    SharedPreferences sentencepre,translationpre,picurlpre,mp3urlpre;
+    SharedPreferences.Editor sentenceedt,translationedt,picurledt,mp3urledt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mainRg = findViewById(R.id.main_rg);
-        mainRg.setOnCheckedChangeListener(this);
+        //        打开锁屏和闹铃的服务
+        openService();
 
-//        创建Fragment对象
+        setContentView(R.layout.activity_main);
+
+//        根据进入记录设置闹钟
+        setAlarm();
+//        初始化控件
+        init();
+//        创建Fragment并加入MainActivity
+        createFragment();
+
+        String url = URLContent.getEnglishDayURL();
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
+        task.execute(url);
+
+
+    }
+
+    private void createFragment() {
+        //创建Fragment对象
         ShouyeFrag = new ShouyeFragment();
         QuweiFrag = new QuweiFragment();
         FuxiFrag = new FuxiFragment();
@@ -37,7 +79,61 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         addFragmentPage();
     }
 
-//    加入所有的Fragment页面，一个显示，其他三个隐藏
+    private void init() {
+        mainRg = findViewById(R.id.main_rg);
+        mainRg.setOnCheckedChangeListener(this);
+    }
+
+    private void openService() {
+        //默认进来开启锁屏服务
+        Intent intent2 = new Intent(MainActivity.this, LockScreenService.class);
+        Toast.makeText(MainActivity.this,"开启成功",Toast.LENGTH_SHORT).show();
+        startService(intent2);
+//        开启闹钟服务
+        if (ServiceUtil.isRunning(getApplication(),".Fun.service.AlarmService")){
+        }else {
+            startService(new Intent(MainActivity.this, AlarmService.class).putExtra("flag","ClockActivity"));
+            Toast.makeText(getApplicationContext(),"服务开启成功",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void setAlarm() {
+        preferences = getSharedPreferences("count",MODE_PRIVATE);
+        timesp = getSharedPreferences("currenttime",MODE_PRIVATE);
+        int count = preferences.getInt("count",1);
+        long currenttime = timesp.getLong("currenttime",0);
+        long instanceTime = getInstanceTime();
+        long finaltime = instanceTime-currenttime;
+        if(finaltime>oneDaytimeMM){
+            count = 1;
+        }
+        Toast.makeText(MainActivity.this,"应用被打开了："+count+"次",Toast.LENGTH_LONG).show();
+
+        if(count == 1){
+            Intent intent = new Intent(MainActivity.this, AddAlarmActivity.class);
+            intent.putExtra("name","Main");
+            intent.putExtra("minute",minute);
+            intent.putExtra("hour",hour);
+            startActivity(intent);
+        }
+
+        editor = preferences.edit();
+        timeeditor = timesp.edit();
+        //存入数据
+        editor.putInt("count",++count);
+        timeeditor.putLong("currenttime",instanceTime);
+        //提交修改
+        editor.commit();
+        timeeditor.commit();
+
+//        Toast.makeText(MainActivity.this,"当前时间："+finaltime,Toast.LENGTH_LONG).show();
+//        Toast.makeText(MainActivity.this,"当前时间："+getInstanceTime(),Toast.LENGTH_LONG).show();
+
+
+
+    }
+
+    //    加入所有的Fragment页面，一个显示，其他三个隐藏
     private void addFragmentPage() {
         manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
@@ -51,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         transaction.commit();
     }
 
+//    Fragment的切换
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         FragmentTransaction transaction = manager.beginTransaction();
@@ -81,5 +178,51 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
         }
         transaction.commit();
+    }
+
+//      获取当前时间
+    public long getInstanceTime(){
+        long mm = second+minute*60+hour*60*60+day*24*60*60+month*30*24*60*60;
+        return mm;
+    }
+
+
+//    防止返回键的触发
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
+
+
+    @Override
+    public void onSuccess(String json) {
+        if(!TextUtils.isEmpty(json)){
+            EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+            String sentence = bean.getNote();
+            String translation = bean.getContent();
+            String picURL = bean.getPicture4();
+            String mp3URL = bean.getTts();
+            sentencepre = getSharedPreferences("sentence",MODE_PRIVATE);
+            translationpre = getSharedPreferences("translation",MODE_PRIVATE);
+            picurlpre = getSharedPreferences("picurl",MODE_PRIVATE);
+            mp3urlpre = getSharedPreferences("mp3url",MODE_PRIVATE);
+
+            sentenceedt = sentencepre.edit();
+            translationedt = translationpre.edit();
+            picurledt = picurlpre.edit();
+            mp3urledt = mp3urlpre.edit();
+
+            sentenceedt.putString("sentence",sentence);
+            translationedt.putString("translation",translation);
+            picurledt.putString("picurl",picURL);
+            mp3urledt.putString("mp3url",mp3URL);
+
+            sentenceedt.commit();
+            translationedt.commit();
+            picurledt.commit();
+            mp3urledt.commit();
+
+
+        }
     }
 }

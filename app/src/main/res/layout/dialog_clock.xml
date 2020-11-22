@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_round_white"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/title_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="什么都不做，才会来不及"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/sentence_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_38"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="真是美好的一天"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/font_common_1"/>
+    <TextView
+        android:id="@+id/translation_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_38"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:text="What a good day today."
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/font_common_1"/>
+    <ImageView
+        android:id="@+id/image_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:src="@mipmap/fun"
+        android:layout_gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/commom_background"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cancel_clock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_dialog_left_white"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/font_common_2"/>
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:background="@color/commom_background"/>
+
+        <TextView
+            android:id="@+id/submit_clock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_dialog_right_white"
+            android:gravity="center"
+            android:layout_weight="1.0"
+            android:text="@string/submit"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/font_blue"/>
+
+    </LinearLayout>
+</LinearLayout>

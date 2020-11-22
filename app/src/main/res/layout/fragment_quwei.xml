@@ -55,20 +55,30 @@
                 android:layout_weight="1"
                 android:layout_margin="@dimen/dp_10"
                 android:layout_height="@dimen/dp_230"
-                android:background="@drawable/login_edittext">
+                android:background="@drawable/shouye_wordlistbtn">
 
                 <RelativeLayout
+                    android:id="@+id/quwei_rl_linkgame"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <ImageView
+                        android:id="@+id/quwei_iv_fun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:src="@mipmap/fun"/>
+
                     <TextView
+                        android:layout_toRightOf="@+id/quwei_iv_fun"
                         android:id="@+id/quwei_tv_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="单词连连看"
                         android:textSize="@dimen/sp_16"
                         android:textColor="#000"
-                        android:layout_marginLeft="@dimen/dp_18"
+                        android:layout_marginLeft="@dimen/dp_10"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/dp_18"
                         />
@@ -96,6 +106,54 @@
                 android:layout_height="@dimen/dp_230"
                 android:orientation="vertical">
 
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/login_edittext">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/quwei_rl_alarmwarn"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+<!--                        <TextView-->
+<!--                            android:id="@+id/quwei_tv_alarmtip"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="简单小提醒"-->
+<!--                            android:textSize="@dimen/sp_16"-->
+<!--                            android:textColor="#000"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:layout_marginTop="@dimen/dp_18"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            android:layout_marginRight="@dimen/dp_20"-->
+<!--                            />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="不再忘记学习"-->
+<!--                            android:textSize="@dimen/sp_12"-->
+<!--                            android:textColor="@color/grey"-->
+<!--                            android:layout_marginTop="@dimen/dp_10"-->
+<!--                            android:layout_marginRight="@dimen/dp_20"-->
+<!--                            android:layout_below="@+id/quwei_tv_alarmtip"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            />-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/dp_40"-->
+<!--                            android:layout_height="@dimen/dp_40"-->
+<!--                            android:src="@mipmap/gameclock"-->
+<!--                            android:layout_marginTop="@dimen/dp_18"-->
+<!--                            android:layout_marginLeft="@dimen/dp_8"-->
+
+<!--                            />-->
+
+
+<!--                    </RelativeLayout>-->
+
+<!--                </LinearLayout>-->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -103,54 +161,7 @@
                     android:background="@drawable/login_edittext">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:id="@+id/quwei_tv_alarmtip"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="简单小提醒"
-                            android:textSize="@dimen/sp_16"
-                            android:textColor="#000"
-                            android:textStyle="bold"
-                            android:layout_marginTop="@dimen/dp_18"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="@dimen/dp_20"
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="不再忘记学习"
-                            android:textSize="@dimen/sp_12"
-                            android:textColor="@color/grey"
-                            android:layout_marginTop="@dimen/dp_10"
-                            android:layout_marginRight="@dimen/dp_20"
-                            android:layout_below="@+id/quwei_tv_alarmtip"
-                            android:layout_alignParentRight="true"
-                            />
-
-                        <ImageView
-                            android:layout_width="@dimen/dp_40"
-                            android:layout_height="@dimen/dp_40"
-                            android:src="@mipmap/gameclock"
-                            android:layout_marginTop="@dimen/dp_18"
-                            android:layout_marginLeft="@dimen/dp_8"
-
-                            />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginTop="@dimen/dp_18"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/login_edittext">
-
-                    <RelativeLayout
+                        android:id="@+id/quwei_rl_alarm"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -202,46 +213,19 @@
     <RelativeLayout
         android:id="@+id/quwei_rl_bottom"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_60"
+        android:layout_height="@dimen/dp_50"
         android:layout_margin="@dimen/dp_10"
-        android:layout_below="@+id/quwei_rl_mainbar">
+        android:layout_below="@+id/quwei_rl_mainbar"
+        android:background="@drawable/quwei_lockscreen">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/login_edittext">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单词锁屏已默认开启~"
+            android:textSize="@dimen/sp_16"
+            android:layout_centerInParent="true"
+            />
 
-                <TextView
-                    android:id="@+id/quwei_tv_lock"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_23"
-                    android:layout_marginTop="@dimen/dp_12"
-                    android:text="单词解锁"
-                    android:textColor="#000"
-                    android:textSize="@dimen/sp_16"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/quwei_tv_lock"
-                    android:layout_marginLeft="@dimen/dp_38"
-                    android:text="专治手痒"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/sp_12" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:src="@mipmap/rightback" />
-
-
-
-        </RelativeLayout>
 
     </RelativeLayout>
 

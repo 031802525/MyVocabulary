@@ -1,4 +1,4 @@
-package com.example.desktop.Fun;
+package com.example.desktop.Fun.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

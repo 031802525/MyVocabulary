@@ -13,4 +13,19 @@
     <color name="deepblue">#51aaff</color>
     <color name="lightgreen">#c5e781</color>
     <color name="lightpurple">#bda9ec</color>
+    <color name="lightred">#fc4327</color>
+
+    <color name="font_gray_b">#d4d4d3</color>
+
+    <color name="font_tab_1">#42369a</color>
+    <color name="font_tab_0">#b1b1b1</color>
+
+
+    <color name="font_common_1">#424242</color>
+    <color name="font_common_2">#a1a1a1</color>
+    <color name="font_blue">#42369a</color>
+
+    <color name="font_green">#00cccc</color>
+
+    <color name="commom_background">#f3f3f3</color>
 </resources>

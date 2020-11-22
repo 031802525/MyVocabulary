@@ -2,7 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.desktop">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/logo"
@@ -11,11 +22,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fun.LockScreenActivity"></activity>
-        <activity android:name=".Fun.RemainActivity" />
-        <activity android:name=".Fun.AddWordActivity" />
-        <activity android:name=".Fun.WordBagActivity" />
-        <activity android:name=".Fun.LinkGameActivity" />
+        <activity android:name=".Fun.activity.EveryDayActivity"></activity>
+        <activity android:name=".Fun.activity.LinkGameOverActivity" />
+
+        <receiver
+            android:name=".Fun.receive.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <service
+            android:name=".Fun.service.AlarmService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":AlarmService" />
+
+        <activity android:name=".Fun.activity.AddAlarmActivity" />
+        <activity android:name=".Fun.activity.AlarmActivity" />
+
+        <receiver
+            android:name=".Fun.receive.LockScreenReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".Fun.service.LockScreenService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Fun.activity.LockScreenActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.package.name.lockscreen" />
+        <activity android:name=".Fun.activity.AddWordActivity" />
+        <activity android:name=".Fun.activity.WordBagActivity" />
+        <activity android:name=".Fun.activity.LinkGameActivity" />
         <activity android:name=".Register.ForgetPwdActivity" />
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Register.LoginActivity">
