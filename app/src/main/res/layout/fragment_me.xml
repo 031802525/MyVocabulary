@@ -173,6 +173,7 @@
                             android:gravity="center">
 
                             <Button
+                                android:id="@+id/me_btn_plan"
                                 android:layout_width="@dimen/dp_70"
                                 android:layout_height="@dimen/dp_70"
                                 android:background="@drawable/me_btn"
@@ -187,6 +188,7 @@
                             android:gravity="center">
 
                             <Button
+                                android:id="@+id/me_btn_daka"
                                 android:layout_width="@dimen/dp_70"
                                 android:layout_height="@dimen/dp_70"
                                 android:background="@drawable/me_btn_2"
@@ -201,6 +203,7 @@
                             android:gravity="center">
 
                             <Button
+                                android:id="@+id/me_btn_list"
                                 android:layout_width="@dimen/dp_70"
                                 android:layout_height="@dimen/dp_70"
                                 android:background="@drawable/me_btn_3"
@@ -231,6 +234,7 @@
                         android:textStyle="bold" />
 
                     <ImageView
+                        android:id="@+id/me_iv_dakabtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
