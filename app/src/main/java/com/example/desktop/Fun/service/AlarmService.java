@@ -146,10 +146,10 @@ public class AlarmService extends Service {
 //        Intent intent = new Intent(this, EveryDayActivity.class);
 //        startActivity(intent);
 
-        SharedPreferences sentencepre = getSharedPreferences("sentence",MODE_PRIVATE);
+        SharedPreferences sentencepre = this.getSharedPreferences("everysentence",MODE_PRIVATE);
+
         String content = sentencepre.getString("sentence","美好的一天！");
-        SharedPreferences mp3urlpre = getSharedPreferences("mp3url",MODE_PRIVATE);
-        String mp3URL =  mp3urlpre.getString("mp3url","");
+        String mp3URL =  sentencepre.getString("mp3url","");
 
         if (clockBean.getIfVibrate().equals("是")){
             shake();
