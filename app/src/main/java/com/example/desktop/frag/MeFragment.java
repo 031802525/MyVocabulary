@@ -1,7 +1,9 @@
 package com.example.desktop.frag;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,6 +81,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent2);
                 break;
             case R.id.me_tv_exit:
+                clear();
                 Intent intent1 = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent1);
                 break;
@@ -97,5 +100,14 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
         }
+    }
+    private void clear(){
+        SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("USER_NAME","");
+        editor.putString("PASSWORD","");
+        editor.putBoolean("ISCHECK",false);
+        editor.putBoolean("AUTO_ISCHECK",false);
+        editor.commit();
     }
 }
