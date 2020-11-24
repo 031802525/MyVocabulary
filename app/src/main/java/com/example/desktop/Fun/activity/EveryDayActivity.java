@@ -2,21 +2,20 @@ package com.example.desktop.Fun.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.desktop.Fun.bean.EverydaySentenceBean;
-import com.example.desktop.Fun.util.LoadDataAsyncTask;
-import com.example.desktop.Fun.util.URLContent;
+import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet4learnBean;
+import com.example.desktop.Util.LoadDataAsyncTask;
+import com.example.desktop.Util.URLContent;
 import com.example.desktop.R;
 import com.google.gson.Gson;
-import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 public class EveryDayActivity extends AppCompatActivity implements LoadDataAsyncTask.OnGetNetDataListener{
 
@@ -43,7 +42,8 @@ public class EveryDayActivity extends AppCompatActivity implements LoadDataAsync
 
 
 //        获取URL
-        String url = URLContent.getEnglishDayURL();
+//        String url = URLContent.getEnglishDayURL();
+        String url = URLContent.getCet4Review("12",20);
 //        String url = URLContent.getChineseToEnglish(chineseUTF8);
 //        String url = URLContent.getWordTranslateURL("word");
 //        加载网络数据
@@ -61,21 +61,25 @@ public class EveryDayActivity extends AppCompatActivity implements LoadDataAsync
         if(!TextUtils.isEmpty(json)){
 //            ChineseToEnglishBean bean = new Gson().fromJson(json, ChineseToEnglishBean.class);
 //            everydayTv.setText(bean.getTrans_result().get(0).getDst());
-            EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
-            everydayTv.setText(bean.getNote());
-            contentTv.setText(bean.getContent());
-            String picURL = bean.getPicture4();
-            Picasso.with(this).load(picURL).into(pictureIv);
-            String mp3URL = bean.getTts();
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            try {
-                mediaPlayer.setDataSource(mp3URL);
-                mediaPlayer.prepare();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            mediaPlayer.start();
+//            EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+//            everydayTv.setText(bean.getNote());
+//            contentTv.setText(bean.getContent());
+//            String picURL = bean.getPicture4();
+//            Picasso.with(this).load(picURL).into(pictureIv);
+//            String mp3URL = bean.getTts();
+//            MediaPlayer mediaPlayer = new MediaPlayer();
+//            try {
+//                mediaPlayer.setDataSource(mp3URL);
+//                mediaPlayer.prepare();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            mediaPlayer.start();
+            Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+            List<Cet4ReviewBean._$4Bean> wordlist = bean.get_$4();
+            everydayTv.setText(wordlist.get(0).getContent());
+            contentTv.setText(wordlist.get(0).getExplaination());
 //            WordTranslateBean bean = new Gson().fromJson(json, WordTranslateBean.class);
 //            List<String> explains = bean.getExplains();
 //            everydayTv.setText(explains.get(0));

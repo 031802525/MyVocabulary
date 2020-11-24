@@ -1,14 +1,14 @@
-package com.example.desktop.Fun.bean;
+package com.example.desktop.Bean.translatebean;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class EnglishToChineseBean {
+public class ChineseToEnglishBean {
 
     /**
-     * trans_result : [{"dst":"多有趣的一天","src":"what a funny day"}]
-     * from : en
-     * to : zh
+     * trans_result : [{"dst":"You are so beautiful","src":"你真美丽"}]
+     * from : zh
+     * to : en
      */
 
     private String from;
@@ -41,8 +41,8 @@ public class EnglishToChineseBean {
 
     public static class TransResultBean implements Serializable {
         /**
-         * dst : 多有趣的一天
-         * src : what a funny day
+         * dst : You are so beautiful
+         * src : 你真美丽
          */
 
         private String dst;
@@ -65,4 +65,3 @@ public class EnglishToChineseBean {
         }
     }
 }
-

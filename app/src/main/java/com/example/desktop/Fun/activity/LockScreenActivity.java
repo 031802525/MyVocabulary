@@ -79,12 +79,10 @@ public class LockScreenActivity extends AppCompatActivity {
     }
 
     private void showImage() {
-        SharedPreferences imagepre = getSharedPreferences("picurl",MODE_PRIVATE);
-        SharedPreferences sentencepre = getSharedPreferences("sentence",MODE_PRIVATE);
-        SharedPreferences translationpre = getSharedPreferences("translation",MODE_PRIVATE);
-        String picURL = imagepre.getString("picurl","");
-        String sentence = sentencepre.getString("sentence","美好的一天！");
-        String translation = translationpre.getString("translation","What a good day!");
+        SharedPreferences everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
+        String picURL = everySentence.getString("picurl","");
+        String sentence = everySentence.getString("sentence","美好的一天！");
+        String translation = everySentence.getString("translation","What a good day!");
         sentenceTv.setText(sentence);
         translationTv.setText(translation);
         if(!TextUtils.isEmpty(picURL)){

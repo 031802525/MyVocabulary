@@ -1,4 +1,4 @@
-package com.example.desktop.Fun.bean;
+package com.example.desktop.Bean.translatebean;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -151,13 +151,23 @@
                 android:inputType="textPassword"
                 android:paddingLeft="@dimen/dp_8" />
 
-        </RelativeLayout>
 
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/register_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击验证"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/dp_70"
+            android:layout_marginTop="@dimen/dp_10"
+            />
         <Button
             android:id="@+id/register_btn_register"
             android:layout_width="@dimen/dp_250"
             android:layout_height="@dimen/dp_45"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
             android:background="@drawable/login_btn"
             android:text="立即注册"
             android:textColor="@color/white"

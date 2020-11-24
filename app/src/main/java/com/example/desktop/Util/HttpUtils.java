@@ -1,4 +1,4 @@
-package com.example.desktop.Fun.util;
+package com.example.desktop.Util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

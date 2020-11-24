@@ -13,12 +13,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.desktop.Fun.activity.AddAlarmActivity;
-import com.example.desktop.Fun.bean.EverydaySentenceBean;
+import com.example.desktop.Bean.translatebean.EverydaySentenceBean;
 import com.example.desktop.Fun.service.AlarmService;
 import com.example.desktop.Fun.service.LockScreenService;
-import com.example.desktop.Fun.util.LoadDataAsyncTask;
+import com.example.desktop.Util.LoadDataAsyncTask;
 import com.example.desktop.Fun.util.ServiceUtil;
-import com.example.desktop.Fun.util.URLContent;
+import com.example.desktop.Util.URLContent;
 import com.example.desktop.frag.FuxiFragment;
 import com.example.desktop.frag.QuweiFragment;
 import com.example.desktop.frag.MeFragment;
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     int minute = calendar.get(Calendar.MINUTE);
     int second = calendar.get(Calendar.SECOND);
 
-    SharedPreferences sentencepre,translationpre,picurlpre,mp3urlpre;
-    SharedPreferences.Editor sentenceedt,translationedt,picurledt,mp3urledt;
+    SharedPreferences everySentence;
+    SharedPreferences.Editor everySentenceedit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,13 +87,13 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void openService() {
         //默认进来开启锁屏服务
         Intent intent2 = new Intent(MainActivity.this, LockScreenService.class);
-        Toast.makeText(MainActivity.this,"开启成功",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this,"开启成功",Toast.LENGTH_SHORT).show();
         startService(intent2);
 //        开启闹钟服务
         if (ServiceUtil.isRunning(getApplication(),".Fun.service.AlarmService")){
         }else {
             startService(new Intent(MainActivity.this, AlarmService.class).putExtra("flag","ClockActivity"));
-            Toast.makeText(getApplicationContext(),"服务开启成功",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(),"服务开启成功",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         if(finaltime>oneDaytimeMM){
             count = 1;
         }
-        Toast.makeText(MainActivity.this,"应用被打开了："+count+"次",Toast.LENGTH_LONG).show();
+//        Toast.makeText(MainActivity.this,"应用被打开了："+count+"次",Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this,"当前时间："+instanceTime+",  上次打开时间："+currenttime+", 相差时间："+finaltime,Toast.LENGTH_LONG).show();
 
         if(count == 1){
             Intent intent = new Intent(MainActivity.this, AddAlarmActivity.class);
@@ -188,10 +189,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
 //    防止返回键的触发
-    @Override
-    public void onBackPressed() {
-        // do nothing
-    }
+//    @Override
+//    public void onBackPressed() {
+//        // do nothing
+//    }
 
 
     @Override
@@ -202,25 +203,15 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             String translation = bean.getContent();
             String picURL = bean.getPicture4();
             String mp3URL = bean.getTts();
-            sentencepre = getSharedPreferences("sentence",MODE_PRIVATE);
-            translationpre = getSharedPreferences("translation",MODE_PRIVATE);
-            picurlpre = getSharedPreferences("picurl",MODE_PRIVATE);
-            mp3urlpre = getSharedPreferences("mp3url",MODE_PRIVATE);
+            everySentence = this.getSharedPreferences("everysentence",MODE_PRIVATE);
+            everySentenceedit = everySentence.edit();
 
-            sentenceedt = sentencepre.edit();
-            translationedt = translationpre.edit();
-            picurledt = picurlpre.edit();
-            mp3urledt = mp3urlpre.edit();
+            everySentenceedit.putString("sentence",sentence);
+            everySentenceedit.putString("translation",translation);
+            everySentenceedit.putString("picurl",picURL);
+            everySentenceedit.putString("mp3url",mp3URL);
 
-            sentenceedt.putString("sentence",sentence);
-            translationedt.putString("translation",translation);
-            picurledt.putString("picurl",picURL);
-            mp3urledt.putString("mp3url",mp3URL);
-
-            sentenceedt.commit();
-            translationedt.commit();
-            picurledt.commit();
-            mp3urledt.commit();
+            everySentenceedit.commit();
 
 
         }
