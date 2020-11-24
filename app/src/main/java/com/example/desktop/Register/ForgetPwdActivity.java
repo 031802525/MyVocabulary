@@ -32,9 +32,13 @@ public class ForgetPwdActivity extends AppCompatActivity implements View.OnClick
     private Button forgetBtn;
     private TextView getpwd;
     private DBOpenHelper fDBOpenHelper;
-    private int BackgroudImags[] = {R.drawable.backgroud_1,R.drawable.backgroud_2,R.drawable.backgroud_3,
-            R.drawable.backgroud_4,R.drawable.backgroud_5,R.drawable.backgroud_6,
-            R.drawable.backgroud_7};
+    private int BackgroudImags[] = {R.drawable.bgc1,R.drawable.bgc2,R.drawable.bgc3,
+            R.drawable.bgc4,R.drawable.bgc5,R.drawable.bgc6,
+            R.drawable.bgc7,R.drawable.bgc8,R.drawable.bgc9,
+            R.drawable.bgc10,R.drawable.bgc11,R.drawable.bgc12,R.drawable.bgc13,R.drawable.bgc14,
+            R.drawable.bgc15,R.drawable.bgc16,R.drawable.bgc17,R.drawable.bgc18,R.drawable.bgc19,
+            R.drawable.bgc20,R.drawable.bgc21,R.drawable.bgc22,R.drawable.bgc23,R.drawable.bgc24,
+            R.drawable.bgc25,R.drawable.bgc26};
 
     private boolean isCheck = false;
     private boolean isPress = false;
@@ -65,7 +69,7 @@ public class ForgetPwdActivity extends AppCompatActivity implements View.OnClick
         LinearLayout backgroud = findViewById(R.id.forget_backgroud);
 //         设置背景图片
         Random r = new Random();
-        int random = r.nextInt(7);  // [0,7)
+        int random = r.nextInt(26);  // [0,7)
         backgroud.setBackgroundResource(BackgroudImags[random]);
         backgroud.getBackground().setAlpha(150);
 
