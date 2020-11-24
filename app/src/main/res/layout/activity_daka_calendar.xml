@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgc"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/deepblue"
+        >
+        <ImageView
+            android:id="@+id/daka_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/leftback"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打卡详情"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            />
+
+
+    </RelativeLayout>
+
+
+    <com.example.desktop.My.view.SignDate
+        android:id="@+id/signDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+    </com.example.desktop.My.view.SignDate>
+
+</RelativeLayout>

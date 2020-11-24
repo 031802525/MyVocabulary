@@ -1,9 +1,7 @@
 package com.example.desktop.frag;
 
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.desktop.My.activity.DakaCalendarActivity;
+import com.example.desktop.My.activity.UpdatedetailActivity;
 import com.example.desktop.R;
 import com.example.desktop.Register.LoginActivity;
 
@@ -28,8 +28,6 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     private ImageView idIv,dakaIv;
     private Button planBtn,dakaBtn,listBtn;
     private TextView holdTv,idTv,dayTv,exitTv;
-    private SharedPreferences sp;
-
 
     private static final String TAG = "FragmentMe";
 
@@ -45,7 +43,6 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 //        初始化控件
         init();
-        sp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
     }
 
     private void init() {
@@ -76,19 +73,18 @@ public class MeFragment extends Fragment implements View.OnClickListener {
 //                Intent intent = new Intent(getActivity(), UpdatedetailActivity.class);
 //                startActivity(intent);
 //                break;
-//            case R.id.me_tv_id:
-//                Intent intent2 = new Intent(getActivity(), UpdatedetailActivity.class);
-//                startActivity(intent2);
-//                break;
+            case R.id.me_tv_id:
+                Intent intent2 = new Intent(getActivity(), UpdatedetailActivity.class);
+                startActivity(intent2);
+                break;
             case R.id.me_tv_exit:
-                clear();
                 Intent intent1 = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent1);
                 break;
-//            case R.id.me_btn_daka:
-//                Intent intent3 = new Intent(getActivity(), DakaCalendarActivity.class);
-//                startActivity(intent3);
-//                break;
+            case R.id.me_btn_daka:
+                Intent intent3 = new Intent(getActivity(), DakaCalendarActivity.class);
+                startActivity(intent3);
+                break;
 //            case R.id.me_btn_plan:
 //
 //                break;
@@ -99,14 +95,5 @@ public class MeFragment extends Fragment implements View.OnClickListener {
 //
 //                break;
         }
-    }
-    private void clear(){
-        sp = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("USER_NAME", "");
-        editor.putString("PASSWORD", "");
-        editor.putBoolean("ISCHECK",false);
-        editor.putBoolean("AUTO_ISCHECK",false);
-        editor.commit();
     }
 }

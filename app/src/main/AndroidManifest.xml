@@ -10,10 +10,11 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/logo"
@@ -21,8 +22,13 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Fun.activity.EveryDayActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".My.activity.FinishActivity"></activity>
+        <activity android:name=".My.activity.UpdateActivity" />
+        <activity android:name=".My.activity.DakaCalendarActivity" />
+        <activity android:name=".My.activity.UpdatedetailActivity" />
+        <activity android:name=".Fun.activity.EveryDayActivity" />
         <activity android:name=".Fun.activity.LinkGameOverActivity" />
 
         <receiver
