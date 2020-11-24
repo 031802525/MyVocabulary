@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.desktop.My.activity.DakaCalendarActivity;
+import com.example.desktop.My.activity.FinishActivity;
 import com.example.desktop.My.activity.UpdatedetailActivity;
 import com.example.desktop.R;
 import com.example.desktop.Register.LoginActivity;
@@ -91,9 +92,10 @@ public class MeFragment extends Fragment implements View.OnClickListener {
 //            case R.id.me_btn_list:
 //
 //                break;
-//            case R.id.me_iv_dakabtn:
-//
-//                break;
+            case R.id.me_iv_dakabtn:
+                Intent intent = new Intent(getActivity(), FinishActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }

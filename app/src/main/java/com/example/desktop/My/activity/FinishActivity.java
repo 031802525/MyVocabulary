@@ -34,7 +34,7 @@ public class FinishActivity extends AppCompatActivity implements View.OnClickLis
 
         int day = DateUtil.getCurrentday();
         SharedPreferences sp = this.getSharedPreferences("data", Context.MODE_PRIVATE);
-        int lastDay = sp.getInt("day",day);
+        int lastDay = sp.getInt("day",0);
         if(lastDay == day) {
             finishBtn.setText("今日已打卡");
             finishBtn.setEnabled(false);

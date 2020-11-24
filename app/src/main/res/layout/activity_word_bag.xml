@@ -18,22 +18,31 @@
             android:orientation="horizontal"
             android:background="@color/deepblue">
             <ImageView
-                android:layout_width="@dimen/dp_40"
-                android:layout_height="@dimen/dp_40"
-                android:src="@mipmap/gamebook"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/dp_10"/>
-
-            <TextView
+                android:id="@+id/wordbag_iv_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="单词夹"
-                android:textSize="@dimen/sp_18"
-                android:textColor="@color/white"
+                android:src="@mipmap/leftback"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/dp_5"/>
+                android:layout_marginLeft="@dimen/dp_8"/>
+
 
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单词夹"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@mipmap/gamebook"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            />
 
     </RelativeLayout>
 
@@ -49,17 +58,10 @@
            android:layout_margin="@dimen/dp_10"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:dividerHeight="@dimen/dp_5"/>
+           android:divider="@null"
+           android:dividerHeight="@dimen/dp_10"/>
 
     </RelativeLayout>
-    <ImageView
-        android:id="@+id/wordbag_iv_addword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/gameadd"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp_18"
-        />
+
 
 </RelativeLayout>

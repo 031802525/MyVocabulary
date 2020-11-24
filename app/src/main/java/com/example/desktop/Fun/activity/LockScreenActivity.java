@@ -3,6 +3,7 @@ package com.example.desktop.Fun.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,19 +18,31 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
 import com.example.desktop.R;
+import com.example.desktop.Util.LoadDataAsyncTask;
+import com.example.desktop.Util.URLContent;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
-public class LockScreenActivity extends AppCompatActivity {
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class LockScreenActivity extends AppCompatActivity implements LoadDataAsyncTask.OnGetNetDataListener {
 
     private Button submitBtn;
     private EditText inputWord;
     private LinearLayout bodyLL;
+    private String translation = "v.提交";
     private String word = "submit";
     private String inputword;
     private ImageView imageIv;
     private TextView sentenceTv,translationTv;
+    private TextView contentTv;
     private int inputCount = 0;
+    private int planCount = 10;
+    private String wordmean,wordtran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +51,7 @@ public class LockScreenActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         setContentView(R.layout.activity_lock_screen);
 
+        contentTv = findViewById(R.id.lockscreen_tv_translate);
         bodyLL = findViewById(R.id.lockscreen_ll_body);
         submitBtn = findViewById(R.id.lockscreen_btn_submit);
         inputWord = findViewById(R.id.lockscreen_et_input);
@@ -45,6 +59,16 @@ public class LockScreenActivity extends AppCompatActivity {
         sentenceTv = findViewById(R.id.lockscreen_tv_sentence);
         translationTv = findViewById(R.id.lockscreen_tv_sentranslate);
 
+//        加载复习数据 默认四级词包
+        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String name = sp.getString("USER_NAME","");
+        String url = URLContent.getCet4Review(name,planCount);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
+        task.execute(url);
+
+        if (TextUtils.isEmpty(wordtran)){
+            contentTv.setText(translation);
+        }
 
 //        展示图片
         showImage();
@@ -62,17 +86,32 @@ public class LockScreenActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(word.equals(inputword)){
-                    Toast.makeText(getApplicationContext(),"解锁成功！",Toast.LENGTH_SHORT).show();
-                    finish();
-                }else{
-                    inputCount++;
-                    if(inputCount > 3){
-                        Toast.makeText(getApplicationContext(),word,Toast.LENGTH_SHORT).show();
+                if(!TextUtils.isEmpty(wordmean)){
+                    if(wordmean.equals(inputword)){
+                        Toast.makeText(getApplicationContext(),"解锁成功！",Toast.LENGTH_SHORT).show();
+                        finish();
                     }else{
-                        Toast.makeText(getApplicationContext(),"输入错误！",Toast.LENGTH_SHORT).show();
+                        inputCount++;
+                        if(inputCount > 3){
+                            Toast.makeText(getApplicationContext(),wordmean,Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(),"输入错误！",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }else {
+                    if(word.equals(inputword)){
+                        Toast.makeText(getApplicationContext(),"解锁成功！",Toast.LENGTH_SHORT).show();
+                        finish();
+                    }else{
+                        inputCount++;
+                        if(inputCount > 3){
+                            Toast.makeText(getApplicationContext(),word,Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(),"输入错误！",Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
+
 
             }
         });
@@ -139,4 +178,16 @@ public class LockScreenActivity extends AppCompatActivity {
         // do nothing
     }
 
+    @Override
+    public void onSuccess(String json) {
+
+        if (!TextUtils.isEmpty(json)) {
+            Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+            List<Cet4ReviewBean._$4Bean> wordlist = bean.get_$4();
+            Collections.shuffle(wordlist);
+            wordtran = wordlist.get(0).getExplaination();
+            wordmean = wordlist.get(0).getContent();
+            contentTv.setText(wordtran);
+        }
+    }
 }

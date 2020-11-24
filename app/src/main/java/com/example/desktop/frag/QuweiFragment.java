@@ -79,10 +79,10 @@ public class QuweiFragment extends Fragment implements View.OnClickListener {
 //                Intent intent2 = new Intent(getActivity(), LockScreenService.class);
 //                Toast.makeText(getContext(),"开启成功",Toast.LENGTH_SHORT).show();
 //                getActivity().startService(intent2);
-                Intent intent2 = new Intent(getActivity(), EveryDayActivity.class);
-                startActivity(intent2);
-//                Intent intent2 = new Intent(getActivity(), LockScreenActivity.class);
+//                Intent intent2 = new Intent(getActivity(), EveryDayActivity.class);
 //                startActivity(intent2);
+                Intent intent2 = new Intent(getActivity(), LockScreenActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

@@ -103,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:padding="@dimen/dp_8"
             >
 
             <LinearLayout
@@ -114,8 +115,10 @@
                     android:id="@+id/linkgame_lv_leftwordspell"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:dividerHeight="@dimen/dp_8"
+                    android:dividerHeight="@dimen/dp_12"
                     android:divider="@null"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_5"
                     />
             </LinearLayout>
             <LinearLayout
@@ -127,8 +130,11 @@
                     android:id="@+id/linkgame_lv_rightwordtranslate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:dividerHeight="@dimen/dp_8"
-                    android:divider="@null"/>
+                    android:dividerHeight="@dimen/dp_12"
+                    android:divider="@null"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    />
             </LinearLayout>
 
         </LinearLayout>
