@@ -37,9 +37,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button loginBtn;
     private CheckBox rememberCb,autoCb;
     private boolean isPress = false;
-    private int BackgroudImags[] = {R.drawable.backgroud_1,R.drawable.backgroud_2,R.drawable.backgroud_3,
-                                    R.drawable.backgroud_4,R.drawable.backgroud_5,R.drawable.backgroud_6,
-                                    R.drawable.backgroud_7};
+    private int BackgroudImags[] = {R.drawable.bgc1,R.drawable.bgc2,R.drawable.bgc3,
+            R.drawable.bgc4,R.drawable.bgc5,R.drawable.bgc6,
+            R.drawable.bgc7};
     private SharedPreferences sp;
     private String okName,okPwd;
 

@@ -38,11 +38,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView submitTv;
     private String username,usrpwd,repwd;
 
-
-
-    private int BackgroudImags[] = {R.drawable.backgroud_1,R.drawable.backgroud_2,R.drawable.backgroud_3,
-            R.drawable.backgroud_4,R.drawable.backgroud_5,R.drawable.backgroud_6,
-            R.drawable.backgroud_7};
+    private int BackgroudImags[] = {R.drawable.bgc1,R.drawable.bgc2,R.drawable.bgc3,
+            R.drawable.bgc4,R.drawable.bgc5,R.drawable.bgc6,
+            R.drawable.bgc7};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

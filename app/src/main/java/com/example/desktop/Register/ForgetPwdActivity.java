@@ -32,9 +32,9 @@ public class ForgetPwdActivity extends AppCompatActivity implements View.OnClick
     private Button forgetBtn;
     private TextView getpwd;
     private DBOpenHelper fDBOpenHelper;
-    private int BackgroudImags[] = {R.drawable.backgroud_1,R.drawable.backgroud_2,R.drawable.backgroud_3,
-            R.drawable.backgroud_4,R.drawable.backgroud_5,R.drawable.backgroud_6,
-            R.drawable.backgroud_7};
+    private int BackgroudImags[] = {R.drawable.bgc1,R.drawable.bgc2,R.drawable.bgc3,
+            R.drawable.bgc4,R.drawable.bgc5,R.drawable.bgc6,
+            R.drawable.bgc7};
 
     private boolean isCheck = false;
     private boolean isPress = false;
