@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
     <application
@@ -27,7 +26,6 @@
         <activity android:name=".My.activity.FinishActivity"></activity>
         <activity android:name=".My.activity.UpdateActivity" />
         <activity android:name=".My.activity.DakaCalendarActivity" />
-        <activity android:name=".My.activity.UpdatedetailActivity" />
         <activity android:name=".Fun.activity.EveryDayActivity" />
         <activity android:name=".Fun.activity.LinkGameOverActivity" />
 
