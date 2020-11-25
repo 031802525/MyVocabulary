@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:id="@+id/fuxi_tv_listen"
+                                android:id="@+id/shouye_tv_begin"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/dp_23"
@@ -130,7 +130,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/fuxi_tv_listen"
+                                android:layout_below="@+id/shouye_tv_begin"
                                 android:layout_marginLeft="@dimen/dp_23"
                                 android:layout_marginTop="@dimen/dp_10"
                                 android:text="坚持就是胜利！"
@@ -141,31 +141,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentBottom="true"
                                 >
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center"
-                                    >
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/login_edittext"
-                                        android:padding="@dimen/dp_5"
-                                        android:text="四级词汇"
-                                        android:textColor="@color/black" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:background="@drawable/login_edittext"
-                                        android:padding="@dimen/dp_5"
-                                        android:text="100"
-                                        android:layout_marginLeft="@dimen/dp_10"
-                                        android:textColor="@color/black" />
-                                </LinearLayout>
 
                             </RelativeLayout>
 
@@ -197,7 +172,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:id="@+id/fuxi_tv_remember"
+                                    android:id="@+id/shouye_tv_search"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_23"
@@ -213,7 +188,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_10"
                                     android:layout_marginTop="@dimen/dp_23"
-                                    android:layout_toRightOf="@+id/fuxi_tv_remember"
+                                    android:layout_toRightOf="@+id/shouye_tv_search"
                                     android:src="@mipmap/search" />
 
 
@@ -233,7 +208,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:id="@+id/fuxi_tv_plan"
+                                    android:id="@+id/shouyr_tv_wordlist"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_23"
@@ -249,7 +224,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_10"
                                     android:layout_marginTop="@dimen/dp_23"
-                                    android:layout_toRightOf="@+id/fuxi_tv_plan"
+                                    android:layout_toRightOf="@+id/shouyr_tv_wordlist"
                                     android:src="@mipmap/book" />
 
 
@@ -272,18 +247,18 @@
                 android:layout_marginRight="@dimen/dp_10"
                 android:padding="@dimen/dp_10"
                 >
-                    <TextView
-                        android:id="@+id/quwei_tv_lock"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp_23"
-                        android:layout_marginTop="@dimen/dp_13"
-                        android:text="翻译"
-                        android:textColor="#000"
-                        android:textSize="@dimen/sp_16"
-                        android:textStyle="bold"
-                        android:layout_centerVertical="true"
-                        />
+                <TextView
+                    android:id="@+id/shouye_tv_translate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_23"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:text="翻译"
+                    android:textColor="#000"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    />
 
 
                 <ImageView
