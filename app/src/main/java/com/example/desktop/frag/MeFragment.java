@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,13 +17,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.desktop.My.activity.DakaCalendarActivity;
 import com.example.desktop.My.activity.FinishActivity;
-import com.example.desktop.My.activity.UpdatedetailActivity;
 import com.example.desktop.R;
 import com.example.desktop.Register.LoginActivity;
 
 
 /**
- * A simple {@link Fragment} subclass.
+  * A simple {@link Fragment} subclass.
  */
 public class MeFragment extends Fragment implements View.OnClickListener {
 
@@ -46,6 +44,12 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 //        初始化控件
         init();
+        SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        idTv.setText(sp.getString("USER_NAME","用户名"));
+        SharedPreferences spc = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
+        int day = spc.getInt("count",0);
+        dayTv.setText(day+"");
+
     }
 
     private void init() {
@@ -67,6 +71,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         planBtn.setOnClickListener(this);
         dakaIv.setOnClickListener(this);
 
+
     }
 
     @Override
@@ -77,8 +82,6 @@ public class MeFragment extends Fragment implements View.OnClickListener {
 //                startActivity(intent);
 //                break;
             case R.id.me_tv_id:
-                Intent intent2 = new Intent(getActivity(), UpdatedetailActivity.class);
-                startActivity(intent2);
                 break;
             case R.id.me_tv_exit:
                 clear();
