@@ -27,6 +27,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class DueToChineseActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -81,6 +82,95 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                         }
 //            打乱list
                         Collections.shuffle(wordmDatas4);
+                        wordTv.setText(wordmDatas4.get(0).getExplaination());
+                        yinbiaoTv.setText(wordmDatas4.get(0).getPhonetic());
+                        hintTv.setText(wordmDatas4.get(0).getContent());
+                        if(wordmDatas4.size()>4 && wordmDatas4!=null){
+                            Random r = new Random();
+                            int a = r.nextInt(4);
+                            if(a == 0){
+                                mean1Btn.setText(wordmDatas4.get(0).getContent());
+                                mean2Btn.setText(wordmDatas4.get(1).getContent());
+                                mean3Btn.setText(wordmDatas4.get(2).getContent());
+                                mean4Btn.setText(wordmDatas4.get(3).getContent());
+                            }else if(a == 1){
+                                mean2Btn.setText(wordmDatas4.get(0).getContent());
+                                mean1Btn.setText(wordmDatas4.get(1).getContent());
+                                mean3Btn.setText(wordmDatas4.get(2).getContent());
+                                mean4Btn.setText(wordmDatas4.get(3).getContent());
+                            }else if(a == 2){
+                                mean3Btn.setText(wordmDatas4.get(0).getContent());
+                                mean1Btn.setText(wordmDatas4.get(2).getContent());
+                                mean2Btn.setText(wordmDatas4.get(1).getContent());
+                                mean4Btn.setText(wordmDatas4.get(3).getContent());
+                            }else if(a == 3){
+                                mean4Btn.setText(wordmDatas4.get(0).getContent());
+                                mean1Btn.setText(wordmDatas4.get(1).getContent());
+                                mean2Btn.setText(wordmDatas4.get(3).getContent());
+                                mean3Btn.setText(wordmDatas4.get(2).getContent());
+                            }
+                        }else {
+                            Random r = new Random();
+                            int c = r.nextInt(4);
+                            if(c == 0){
+                                mean1Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 1){
+                                mean2Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean1Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 2){
+                                mean3Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 3){
+                                mean4Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[d]);
+                            }
+                        }
+                        wordmDatas4.remove(0);
 
                     }else if(type == 6){
                         Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
@@ -90,6 +180,95 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                         }
 //            打乱list
                         Collections.shuffle(wordmDatas6);
+                        wordTv.setText(wordmDatas6.get(0).getExplaination());
+                        yinbiaoTv.setText(wordmDatas6.get(0).getPhonetic());
+                        hintTv.setText(wordmDatas6.get(0).getContent());
+                        if(wordmDatas6.size()>4 && wordmDatas6!=null){
+                            Random r = new Random();
+                            int a = r.nextInt(4);
+                            if(a == 0){
+                                mean1Btn.setText(wordmDatas6.get(0).getContent());
+                                mean2Btn.setText(wordmDatas6.get(1).getContent());
+                                mean3Btn.setText(wordmDatas6.get(2).getContent());
+                                mean4Btn.setText(wordmDatas6.get(3).getContent());
+                            }else if(a == 1){
+                                mean2Btn.setText(wordmDatas6.get(0).getContent());
+                                mean1Btn.setText(wordmDatas6.get(1).getContent());
+                                mean3Btn.setText(wordmDatas6.get(2).getContent());
+                                mean4Btn.setText(wordmDatas6.get(3).getContent());
+                            }else if(a == 2){
+                                mean3Btn.setText(wordmDatas6.get(0).getContent());
+                                mean1Btn.setText(wordmDatas6.get(2).getContent());
+                                mean2Btn.setText(wordmDatas6.get(1).getContent());
+                                mean4Btn.setText(wordmDatas6.get(3).getContent());
+                            }else if(a == 3){
+                                mean4Btn.setText(wordmDatas6.get(0).getContent());
+                                mean1Btn.setText(wordmDatas6.get(1).getContent());
+                                mean2Btn.setText(wordmDatas6.get(3).getContent());
+                                mean3Btn.setText(wordmDatas6.get(2).getContent());
+                            }
+                        }else {
+                            Random r = new Random();
+                            int c = r.nextInt(4);
+                            if(c == 0){
+                                mean1Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 1){
+                                mean2Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean1Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 2){
+                                mean3Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 3){
+                                mean4Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[d]);
+                            }
+                        }
+                        wordmDatas6.remove(0);
 
                     }else if(type == 8){
                         HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
@@ -99,6 +278,95 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                         }
 //            打乱list
                         Collections.shuffle(wordmDatas8);
+                        wordTv.setText(wordmDatas8.get(0).getExplaination());
+                        yinbiaoTv.setText(wordmDatas8.get(0).getPhonetic());
+                        hintTv.setText(wordmDatas8.get(0).getContent());
+                        if(wordmDatas8.size()>4 && wordmDatas8!=null){
+                            Random r = new Random();
+                            int a = r.nextInt(4);
+                            if(a == 0){
+                                mean1Btn.setText(wordmDatas8.get(0).getContent());
+                                mean2Btn.setText(wordmDatas8.get(1).getContent());
+                                mean3Btn.setText(wordmDatas8.get(2).getContent());
+                                mean4Btn.setText(wordmDatas8.get(3).getContent());
+                            }else if(a == 1){
+                                mean2Btn.setText(wordmDatas8.get(0).getContent());
+                                mean1Btn.setText(wordmDatas8.get(1).getContent());
+                                mean3Btn.setText(wordmDatas8.get(2).getContent());
+                                mean4Btn.setText(wordmDatas8.get(3).getContent());
+                            }else if(a == 2){
+                                mean3Btn.setText(wordmDatas8.get(0).getContent());
+                                mean1Btn.setText(wordmDatas8.get(2).getContent());
+                                mean2Btn.setText(wordmDatas8.get(1).getContent());
+                                mean4Btn.setText(wordmDatas8.get(3).getContent());
+                            }else if(a == 3){
+                                mean4Btn.setText(wordmDatas8.get(0).getContent());
+                                mean1Btn.setText(wordmDatas8.get(1).getContent());
+                                mean2Btn.setText(wordmDatas8.get(3).getContent());
+                                mean3Btn.setText(wordmDatas8.get(2).getContent());
+                            }
+                        }else {
+                            Random r = new Random();
+                            int c = r.nextInt(4);
+                            if(c == 0){
+                                mean1Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 1){
+                                mean2Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean1Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 2){
+                                mean3Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean4Btn.setText(word[d]);
+                            }else if(c == 3){
+                                mean4Btn.setText(hintTv.getText().toString());
+                                int a = r.nextInt(word.length);
+                                mean2Btn.setText(word[a]);
+                                int b = r.nextInt(word.length);
+                                while (b == a){
+                                    b = r.nextInt(word.length);
+                                }
+                                mean3Btn.setText(word[b]);
+                                int d = r.nextInt(word.length);
+                                while(d == b || d == a){
+                                    d = r.nextInt(word.length);
+                                }
+                                mean1Btn.setText(word[d]);
+                            }
+                        }
+                        wordmDatas8.remove(0);
                     }
 
                 }
@@ -122,15 +390,89 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas4.get(0).getPhonetic());
                 hintTv.setText(wordmDatas4.get(0).getContent());
                 if(wordmDatas4.size()>4 && wordmDatas4!=null){
-                    mean1Btn.setText(wordmDatas4.get(1).getContent());
-                    mean2Btn.setText(wordmDatas4.get(0).getContent());
-                    mean3Btn.setText(wordmDatas4.get(2).getContent());
-                    mean4Btn.setText(wordmDatas4.get(3).getContent());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        mean1Btn.setText(wordmDatas4.get(0).getContent());
+                        mean2Btn.setText(wordmDatas4.get(1).getContent());
+                        mean3Btn.setText(wordmDatas4.get(2).getContent());
+                        mean4Btn.setText(wordmDatas4.get(3).getContent());
+                    }else if(a == 1){
+                        mean2Btn.setText(wordmDatas4.get(0).getContent());
+                        mean1Btn.setText(wordmDatas4.get(1).getContent());
+                        mean3Btn.setText(wordmDatas4.get(2).getContent());
+                        mean4Btn.setText(wordmDatas4.get(3).getContent());
+                    }else if(a == 2){
+                        mean3Btn.setText(wordmDatas4.get(0).getContent());
+                        mean1Btn.setText(wordmDatas4.get(2).getContent());
+                        mean2Btn.setText(wordmDatas4.get(1).getContent());
+                        mean4Btn.setText(wordmDatas4.get(3).getContent());
+                    }else if(a == 3){
+                        mean4Btn.setText(wordmDatas4.get(0).getContent());
+                        mean1Btn.setText(wordmDatas4.get(1).getContent());
+                        mean2Btn.setText(wordmDatas4.get(3).getContent());
+                        mean3Btn.setText(wordmDatas4.get(2).getContent());
+                    }
                 }else {
-                    mean1Btn.setText(word[1]);
-                    mean2Btn.setText(hintTv.getText().toString());
-                    mean3Btn.setText(word[2]);
-                    mean4Btn.setText(word[3]);
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        mean1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 1){
+                        mean2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean1Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 2){
+                        mean3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 3){
+                        mean4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[d]);
+                    }
                 }
                 wordmDatas4.remove(0);
             }else if(type == 6){
@@ -138,15 +480,89 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas6.get(0).getPhonetic());
                 hintTv.setText(wordmDatas6.get(0).getContent());
                 if(wordmDatas6.size()>4 && wordmDatas6!=null){
-                    mean1Btn.setText(wordmDatas6.get(2).getContent());
-                    mean2Btn.setText(wordmDatas6.get(3).getContent());
-                    mean3Btn.setText(wordmDatas6.get(0).getContent());
-                    mean4Btn.setText(wordmDatas6.get(1).getContent());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        mean1Btn.setText(wordmDatas6.get(0).getContent());
+                        mean2Btn.setText(wordmDatas6.get(1).getContent());
+                        mean3Btn.setText(wordmDatas6.get(2).getContent());
+                        mean4Btn.setText(wordmDatas6.get(3).getContent());
+                    }else if(a == 1){
+                        mean2Btn.setText(wordmDatas6.get(0).getContent());
+                        mean1Btn.setText(wordmDatas6.get(1).getContent());
+                        mean3Btn.setText(wordmDatas6.get(2).getContent());
+                        mean4Btn.setText(wordmDatas6.get(3).getContent());
+                    }else if(a == 2){
+                        mean3Btn.setText(wordmDatas6.get(0).getContent());
+                        mean1Btn.setText(wordmDatas6.get(2).getContent());
+                        mean2Btn.setText(wordmDatas6.get(1).getContent());
+                        mean4Btn.setText(wordmDatas6.get(3).getContent());
+                    }else if(a == 3){
+                        mean4Btn.setText(wordmDatas6.get(0).getContent());
+                        mean1Btn.setText(wordmDatas6.get(1).getContent());
+                        mean2Btn.setText(wordmDatas6.get(3).getContent());
+                        mean3Btn.setText(wordmDatas6.get(2).getContent());
+                    }
                 }else {
-                    mean1Btn.setText(word[2]);
-                    mean2Btn.setText(word[3]);
-                    mean3Btn.setText(hintTv.getText().toString());
-                    mean4Btn.setText(word[1]);
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        mean1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 1){
+                        mean2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean1Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 2){
+                        mean3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 3){
+                        mean4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[d]);
+                    }
                 }
                 wordmDatas6.remove(0);
 
@@ -155,15 +571,89 @@ public class DueToChineseActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas8.get(0).getPhonetic());
                 hintTv.setText(wordmDatas8.get(0).getContent());
                 if(wordmDatas8.size()>4 && wordmDatas8!=null){
-                    mean1Btn.setText(wordmDatas8.get(3).getContent());
-                    mean2Btn.setText(wordmDatas8.get(1).getContent());
-                    mean3Btn.setText(wordmDatas8.get(2).getContent());
-                    mean4Btn.setText(wordmDatas8.get(0).getContent());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        mean1Btn.setText(wordmDatas8.get(0).getContent());
+                        mean2Btn.setText(wordmDatas8.get(1).getContent());
+                        mean3Btn.setText(wordmDatas8.get(2).getContent());
+                        mean4Btn.setText(wordmDatas8.get(3).getContent());
+                    }else if(a == 1){
+                        mean2Btn.setText(wordmDatas8.get(0).getContent());
+                        mean1Btn.setText(wordmDatas8.get(1).getContent());
+                        mean3Btn.setText(wordmDatas8.get(2).getContent());
+                        mean4Btn.setText(wordmDatas8.get(3).getContent());
+                    }else if(a == 2){
+                        mean3Btn.setText(wordmDatas8.get(0).getContent());
+                        mean1Btn.setText(wordmDatas8.get(2).getContent());
+                        mean2Btn.setText(wordmDatas8.get(1).getContent());
+                        mean4Btn.setText(wordmDatas8.get(3).getContent());
+                    }else if(a == 3){
+                        mean4Btn.setText(wordmDatas8.get(0).getContent());
+                        mean1Btn.setText(wordmDatas8.get(1).getContent());
+                        mean2Btn.setText(wordmDatas8.get(3).getContent());
+                        mean3Btn.setText(wordmDatas8.get(2).getContent());
+                    }
                 }else {
-                    mean1Btn.setText(word[3]);
-                    mean2Btn.setText(word[1]);
-                    mean3Btn.setText(word[2]);
-                    mean4Btn.setText(hintTv.getText().toString());
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        mean1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 1){
+                        mean2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean1Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 2){
+                        mean3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean4Btn.setText(word[d]);
+                    }else if(c == 3){
+                        mean4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(word.length);
+                        mean2Btn.setText(word[a]);
+                        int b = r.nextInt(word.length);
+                        while (b == a){
+                            b = r.nextInt(word.length);
+                        }
+                        mean3Btn.setText(word[b]);
+                        int d = r.nextInt(word.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(word.length);
+                        }
+                        mean1Btn.setText(word[d]);
+                    }
                 }
                 wordmDatas8.remove(0);
 

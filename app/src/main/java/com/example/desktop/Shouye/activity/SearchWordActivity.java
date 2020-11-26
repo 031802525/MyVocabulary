@@ -80,6 +80,9 @@ public class SearchWordActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onSuccess(String json) {
                         if (!TextUtils.isEmpty(json)) {
+                            if(mDatas.size()!=0){
+                                mDatas.clear();
+                            }
                             EnglishToChineseWordBean bean = new Gson().fromJson(json, EnglishToChineseWordBean.class);
                             wordTv.setText(bean.getQuery());
                             List<String> translation = bean.getTranslation();

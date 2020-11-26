@@ -117,19 +117,30 @@ public class LearnWordActivity extends AppCompatActivity implements View.OnClick
                 for (int i = 0; i < list.size(); i++) {
                     list4.add(list.get(i));
                 }
+                showTv.setText(list4.get(0).getContent());
+                yinbiaoTv.setText(list4.get(0).getPhonetic());
+                wordmeanTv.setText(list4.get(0).getExplaination());
+                list4.remove(0);
             }else if(type == 6){
                 Cet6learnBean bean = new Gson().fromJson(json, Cet6learnBean.class);
                 List<Cet6learnBean._$6Bean> list = bean.get_$6();
                 for (int i = 0; i < list.size(); i++) {
                     list6.add(list.get(i));
                 }
-
+                showTv.setText(list6.get(0).getContent());
+                yinbiaoTv.setText(list6.get(0).getPhonetic());
+                wordmeanTv.setText(list6.get(0).getExplaination());
+                list6.remove(0);
             }else if(type == 8){
                 HeightWordBean bean = new Gson().fromJson(json, HeightWordBean.class);
                 List<HeightWordBean._$8Bean> list = bean.get_$8();
                 for (int i = 0; i < list.size(); i++) {
                     list8.add(list.get(i));
                 }
+                showTv.setText(list8.get(0).getContent());
+                yinbiaoTv.setText(list8.get(0).getPhonetic());
+                wordmeanTv.setText(list8.get(0).getExplaination());
+                list8.remove(0);
             }
         }
 

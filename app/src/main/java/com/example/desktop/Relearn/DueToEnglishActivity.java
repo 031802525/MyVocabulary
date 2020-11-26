@@ -97,15 +97,89 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas4.get(0).getPhonetic());
                 hintTv.setText(wordmDatas4.get(0).getExplaination());
                 if(wordmDatas4.size()>4 && wordmDatas4!=null){
-                    word1Btn.setText(wordmDatas4.get(1).getExplaination());
-                    word2Btn.setText(wordmDatas4.get(0).getExplaination());
-                    word3Btn.setText(wordmDatas4.get(2).getExplaination());
-                    word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                    }
                 }else {
-                    word1Btn.setText(explainword[1]);
-                    word2Btn.setText(hintTv.getText().toString());
-                    word3Btn.setText(explainword[2]);
-                    word4Btn.setText(explainword[3]);
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
                 }
                 wordmDatas4.remove(0);
 
@@ -115,15 +189,89 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas6.get(0).getPhonetic());
                 hintTv.setText(wordmDatas6.get(0).getExplaination());
                 if(wordmDatas6.size()>4 && wordmDatas6!=null){
-                    word1Btn.setText(wordmDatas6.get(2).getExplaination());
-                    word2Btn.setText(wordmDatas6.get(3).getExplaination());
-                    word3Btn.setText(wordmDatas6.get(0).getExplaination());
-                    word4Btn.setText(wordmDatas6.get(1).getExplaination());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                    }
                 }else {
-                    word1Btn.setText(explainword[2]);
-                    word2Btn.setText(explainword[3]);
-                    word3Btn.setText(hintTv.getText().toString());
-                    word4Btn.setText(explainword[1]);
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
                 }
                 wordmDatas6.remove(0);
 
@@ -132,15 +280,89 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 yinbiaoTv.setText(wordmDatas8.get(0).getPhonetic());
                 hintTv.setText(wordmDatas8.get(0).getExplaination());
                 if(wordmDatas8.size()>4 && wordmDatas8!=null){
-                    word1Btn.setText(wordmDatas8.get(3).getExplaination());
-                    word2Btn.setText(wordmDatas8.get(1).getExplaination());
-                    word3Btn.setText(wordmDatas8.get(2).getExplaination());
-                    word4Btn.setText(wordmDatas8.get(0).getExplaination());
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                    }
                 }else {
-                    word1Btn.setText(explainword[3]);
-                    word2Btn.setText(explainword[1]);
-                    word3Btn.setText(explainword[2]);
-                    word4Btn.setText(hintTv.getText().toString());
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
                 }
                 wordmDatas8.remove(0);
 
@@ -168,6 +390,95 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 }
 //            打乱list
                 Collections.shuffle(wordmDatas4);
+                wordTv.setText(wordmDatas4.get(0).getContent());
+                yinbiaoTv.setText(wordmDatas4.get(0).getPhonetic());
+                hintTv.setText(wordmDatas4.get(0).getExplaination());
+                if(wordmDatas4.size()>4 && wordmDatas4!=null){
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas4.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas4.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas4.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas4.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas4.get(2).getExplaination());
+                    }
+                }else {
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
+                }
+                wordmDatas4.remove(0);
 
             }else if(type == 6){
                 Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
@@ -177,6 +488,95 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 }
 //            打乱list
                 Collections.shuffle(wordmDatas6);
+                wordTv.setText(wordmDatas6.get(0).getContent());
+                yinbiaoTv.setText(wordmDatas6.get(0).getPhonetic());
+                hintTv.setText(wordmDatas6.get(0).getExplaination());
+                if(wordmDatas6.size()>4 && wordmDatas6!=null){
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas6.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas6.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas6.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas6.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas6.get(2).getExplaination());
+                    }
+                }else {
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
+                }
+                wordmDatas6.remove(0);
 
             }else if(type == 8){
                 HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
@@ -186,6 +586,95 @@ public class DueToEnglishActivity extends AppCompatActivity implements View.OnCl
                 }
 //            打乱list
                 Collections.shuffle(wordmDatas8);
+                wordTv.setText(wordmDatas8.get(0).getContent());
+                yinbiaoTv.setText(wordmDatas8.get(0).getPhonetic());
+                hintTv.setText(wordmDatas8.get(0).getExplaination());
+                if(wordmDatas8.size()>4 && wordmDatas8!=null){
+                    Random r = new Random();
+                    int a = r.nextInt(4);
+                    if(a == 0){
+                        word1Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 1){
+                        word2Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 2){
+                        word3Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(2).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word4Btn.setText(wordmDatas8.get(3).getExplaination());
+                    }else if(a == 3){
+                        word4Btn.setText(wordmDatas8.get(0).getExplaination());
+                        word1Btn.setText(wordmDatas8.get(1).getExplaination());
+                        word2Btn.setText(wordmDatas8.get(3).getExplaination());
+                        word3Btn.setText(wordmDatas8.get(2).getExplaination());
+                    }
+                }else {
+                    Random r = new Random();
+                    int c = r.nextInt(4);
+                    if(c == 0){
+                        word1Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 1){
+                        word2Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word1Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 2){
+                        word3Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word4Btn.setText(explainword[d]);
+                    }else if(c == 3){
+                        word4Btn.setText(hintTv.getText().toString());
+                        int a = r.nextInt(explainword.length);
+                        word2Btn.setText(explainword[a]);
+                        int b = r.nextInt(explainword.length);
+                        while (b == a){
+                            b = r.nextInt(explainword.length);
+                        }
+                        word3Btn.setText(explainword[b]);
+                        int d = r.nextInt(explainword.length);
+                        while(d == b || d == a){
+                            d = r.nextInt(explainword.length);
+                        }
+                        word1Btn.setText(explainword[d]);
+                    }
+                }
+                wordmDatas8.remove(0);
             }
 
         }
