@@ -1,7 +1,6 @@
 package com.example.desktop.Fun.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +8,17 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
 import com.example.desktop.R;
 
-import java.util.Collections;
 import java.util.List;
 
-public class LinkGameAdapter extends BaseAdapter {
+public class WordBag6Adapter extends BaseAdapter {
 
     Context context;
-    List<Cet4ReviewBean._$4Bean> mDatas;
-    int selectItem = -1;
+    List<Cet6ReviewBean._$6Bean> mDatas;
 
-    public LinkGameAdapter(Context context, List<Cet4ReviewBean._$4Bean> mDatas) {
+    public WordBag6Adapter(Context context, List<Cet6ReviewBean._$6Bean> mDatas) {
         this.context = context;
         this.mDatas = mDatas;
     }
@@ -48,35 +46,30 @@ public class LinkGameAdapter extends BaseAdapter {
         return mDatas.get(i).getContent();
     }
 
-    public void setSelectItem(int selectItem){
-        this.selectItem = selectItem;
-    }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_game_link,null);
+            view = LayoutInflater.from(context).inflate(R.layout.item_word_list,null);
             holder = new ViewHolder(view);
             view.setTag(holder);
         }else{
             holder = (ViewHolder) view.getTag();
         }
-        Cet4ReviewBean._$4Bean resultBean = mDatas.get(i);
-        holder.contentTv.setText(resultBean.getContent());
-        if(selectItem == i){
-            holder.contentTv.setTextColor(Color.BLUE);
-        }else {
-            holder.contentTv.setTextColor(Color.BLACK);
-        }
+        Cet6ReviewBean._$6Bean resultBean = mDatas.get(i);
+        holder.wordspellTv.setText(resultBean.getContent());
+        holder.wordtranslateTv.setText(resultBean.getExplaination());
         return view;
     }
 
     class ViewHolder{
-        TextView contentTv;
+
+        TextView wordspellTv,wordtranslateTv;
 
         public ViewHolder(View view){
-            contentTv = view.findViewById(R.id.linkgame_tv);
+            wordspellTv = view.findViewById(R.id.worditem_wordspell);
+            wordtranslateTv = view.findViewById(R.id.worditem_wordtranslate);
         }
     }
 }

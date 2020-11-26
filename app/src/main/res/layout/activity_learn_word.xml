@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgc"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/bdc_tou"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        >
+        <RadioButton
+            android:id="@+id/bdc_fanhuijian"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:drawableBottom="@mipmap/leftback"
+            android:button="@null"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/bdc_zhong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bdc_tou"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:id="@+id/bdc_xianshidanci"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="cat"
+            android:textSize="@dimen/sp_48"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/bdc_yinbiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bdc_xianshidanci"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text=" /kæt/"
+            android:textSize="@dimen/sp_30"
+            />
+
+    </RelativeLayout>
+
+
+    <RadioButton
+        android:id="@+id/bdc_bofang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bdc_tou"
+        android:layout_marginTop="@dimen/dp_140"
+        android:layout_marginLeft="@dimen/dp_220"
+        android:button="@null"
+        android:drawableTop="@mipmap/earphone"
+        android:gravity="center"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/bdc_zhong"
+        android:layout_above="@id/bdc_xiamian"
+
+        >
+
+        <TextView
+            android:id="@+id/bdc_danciyisi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="n.猫；猫科动物"
+            android:textSize="@dimen/sp_20" />
+    </RelativeLayout>
+
+
+    <RadioGroup
+        android:id="@+id/bdc_xiamian"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/dp_3"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        android:background="@color/white">
+
+        <RadioButton
+            android:id="@+id/bdc_xiangjie"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_2"
+            android:gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:text="详解"
+            android:textColor="@drawable/main_rbtxt"
+            android:drawableTop="@mipmap/bdc_xiangjie"
+            />
+        <RadioButton
+            android:id="@+id/bdc_xiayici"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="@dimen/dp_2"
+            android:gravity="center"
+            android:textSize="@dimen/sp_12"
+            android:text="下一词"
+            android:textColor="@drawable/main_rbtxt"
+            android:drawableTop="@mipmap/bdc_xiayici"
+            />
+    </RadioGroup>
+</RelativeLayout>
+
+
+
+
+
+

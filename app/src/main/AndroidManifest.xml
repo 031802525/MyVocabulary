@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -23,7 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".My.activity.FinishActivity"></activity>
+        <activity android:name=".Shouye.activity.WordListActivity"></activity>
+        <activity android:name=".Relearn.DueToChineseActivity" />
+        <activity android:name=".Relearn.DueToEnglishActivity" />
+        <activity android:name=".Relearn.ChooseWordbookActivity" />
+        <activity android:name=".Shouye.activity.EnglishToChineseActivity" />
+        <activity android:name=".Shouye.activity.ChineseToEnglishActivity" />
+        <activity android:name=".Shouye.activity.SearchWordActivity" />
+        <activity android:name=".Shouye.activity.LearnWordActivity" />
+        <activity android:name=".My.activity.FinishActivity" />
         <activity android:name=".My.activity.UpdateActivity" />
         <activity android:name=".My.activity.DakaCalendarActivity" />
         <activity android:name=".Fun.activity.EveryDayActivity" />

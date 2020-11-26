@@ -29,6 +29,7 @@
         android:orientation="horizontal">
 
       <LinearLayout
+          android:id="@+id/fuxi_ll_citoyi"
           android:layout_width="0dp"
           android:layout_weight="1"
           android:layout_height="@dimen/dp_240"
@@ -45,7 +46,7 @@
                   android:id="@+id/fuxi_tv_listen"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="听音辩词"
+                  android:text="看词选意"
                   android:textSize="@dimen/sp_14"
                   android:textColor="@color/black"
                   android:textStyle="bold"
@@ -57,7 +58,7 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_below="@+id/fuxi_tv_listen"
-                  android:text="随时听"
+                  android:text="及时记忆"
                   android:textColor="@color/black"
                   android:layout_marginLeft="@dimen/dp_23"
                   android:layout_marginTop="@dimen/dp_10"
@@ -66,7 +67,7 @@
               <ImageView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:src="@mipmap/earphone"
+                  android:src="@mipmap/ci"
                   android:layout_toRightOf="@+id/fuxi_tv_listen"
                   android:layout_marginTop="@dimen/dp_23"
                   android:layout_marginLeft="@dimen/dp_10"/>
@@ -86,6 +87,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/fuxi_ll_yitoci"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -100,7 +102,7 @@
                         android:id="@+id/fuxi_tv_remember"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="单词速记"
+                        android:text="看意选词"
                         android:textSize="@dimen/sp_14"
                         android:textColor="@color/black"
                         android:textStyle="bold"
@@ -132,6 +134,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/fuxi_ll_updateplan"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -147,19 +150,18 @@
                         android:id="@+id/fuxi_tv_plan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="今日计划"
-                        android:textSize="@dimen/sp_14"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:layout_marginLeft="@dimen/dp_23"
                         android:layout_marginTop="@dimen/sp_23"
-                        />
+                        android:text="修改计划"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/fuxi_tv_plan"
-                        android:text="再看一次"
+                        android:text="调整姿势"
                         android:textColor="@color/black"
                         android:layout_marginLeft="@dimen/dp_23"
                         android:layout_marginTop="@dimen/dp_10"

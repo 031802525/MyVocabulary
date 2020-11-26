@@ -12,22 +12,37 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
-import com.example.desktop.Fun.adapter.WordBagAdapter;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
+import com.example.desktop.Bean.wordbookbean.HeightwordReviewBean;
+import com.example.desktop.Fun.adapter.LinkGame4Adapter;
+import com.example.desktop.Fun.adapter.LinkGame6Adapter;
+import com.example.desktop.Fun.adapter.LinkGame8Adapter;
+import com.example.desktop.Fun.adapter.LinkGameExplain4Adapter;
+import com.example.desktop.Fun.adapter.LinkGameExplain6Adapter;
+import com.example.desktop.Fun.adapter.LinkGameExplain8Adapter;
+import com.example.desktop.Fun.adapter.WordBag4Adapter;
+import com.example.desktop.Fun.adapter.WordBag6Adapter;
+import com.example.desktop.Fun.adapter.WordBag8Adapter;
 import com.example.desktop.R;
 import com.example.desktop.Util.LoadDataAsyncTask;
 import com.example.desktop.Util.URLContent;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WordBagActivity extends AppCompatActivity implements View.OnClickListener, LoadDataAsyncTask.OnGetNetDataListener {
 
     ListView wordlistLv;
     ImageView backIv;
-    List<Cet4ReviewBean._$4Bean> mDatas;
+    List<Cet4ReviewBean._$4Bean> m4Datas;
+    List<Cet6ReviewBean._$6Bean> m6Datas;
+    List<HeightwordReviewBean._$8Bean> m8Datas;
     private int planCount = 10;
-    private WordBagAdapter adapter;
+    private WordBag4Adapter adapter4;
+    private WordBag6Adapter adapter6;
+    private WordBag8Adapter adapter8;
 
 
     @Override
@@ -37,9 +52,21 @@ public class WordBagActivity extends AppCompatActivity implements View.OnClickLi
         init();
 
         initDatas();
-        mDatas = new ArrayList<>();
-        adapter = new WordBagAdapter(this, mDatas);
-        wordlistLv.setAdapter(adapter);
+        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        int type = sp.getInt("wordtype",4);
+        if(type == 4){
+            m4Datas = new ArrayList<>();
+            adapter4 = new WordBag4Adapter(this, m4Datas);
+            wordlistLv.setAdapter(adapter4);
+        }else if(type == 6){
+            m6Datas = new ArrayList<>();
+            adapter6 = new WordBag6Adapter(this, m6Datas);
+            wordlistLv.setAdapter(adapter6);
+        }else if(type == 8){
+            m8Datas = new ArrayList<>();
+            adapter8 = new WordBag8Adapter(this, m8Datas);
+            wordlistLv.setAdapter(adapter8);
+        }
     }
 
     private void init() {
@@ -62,21 +89,48 @@ public class WordBagActivity extends AppCompatActivity implements View.OnClickLi
     private void initDatas() {
         SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         String name = sp.getString("USER_NAME","");
-        String url = URLContent.getCet4Review(name,planCount);
-        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
+        int type = sp.getInt("wordtype",4);
+        int plan = sp.getInt("plan",10);
+        String url = "";
+        if(type == 4){
+            url = URLContent.getCet4Review(name,plan);
+        }else if(type == 6){
+            url = URLContent.getCet6Review(name,plan);
+        }else if(type == 8){
+            url = URLContent.getCet8Review(name,plan);
+        }
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, false);
         task.execute(url);
     }
 
     @Override
     public void onSuccess(String json) {
         if (!TextUtils.isEmpty(json)) {
-            mDatas.clear();
-            Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
-            List<Cet4ReviewBean._$4Bean> list = bean.get_$4();
-            for (int i = 0; i < list.size(); i++) {
-                mDatas.add(list.get(i));
+            SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+            int type = sp.getInt("wordtype",4);
+            if(type == 4){
+                Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+                List<Cet4ReviewBean._$4Bean> list = bean.get_$4();
+                for (int i = 0; i < list.size(); i++) {
+                    m4Datas.add(list.get(i));
+                }
+                adapter4.notifyDataSetChanged();
+            }else if(type == 6){
+                Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
+                List<Cet6ReviewBean._$6Bean> list = bean.get_$6();
+                for (int i = 0; i < list.size(); i++) {
+                    m6Datas.add(list.get(i));
+                }
+                adapter6.notifyDataSetChanged();
+            }else if(type == 8){
+                HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
+                List<HeightwordReviewBean._$8Bean> list = bean.get_$8();
+                for (int i = 0; i < list.size(); i++) {
+                    m8Datas.add(list.get(i));
+                }
+                adapter8.notifyDataSetChanged();
             }
-            adapter.notifyDataSetChanged();
+
         }
     }
 

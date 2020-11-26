@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
+import com.example.desktop.Bean.wordbookbean.HeightwordReviewBean;
 import com.example.desktop.R;
 import com.example.desktop.Util.LoadDataAsyncTask;
 import com.example.desktop.Util.URLContent;
@@ -62,7 +64,16 @@ public class LockScreenActivity extends AppCompatActivity implements LoadDataAsy
 //        加载复习数据 默认四级词包
         SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         String name = sp.getString("USER_NAME","");
-        String url = URLContent.getCet4Review(name,planCount);
+        int plan = sp.getInt("plan",10);
+        int type = sp.getInt("wordtype",4);
+        String url = "";
+        if(type == 4){
+            url = URLContent.getCet4Review(name,plan);
+        }else if(type == 6){
+            url = URLContent.getCet6Review(name,plan);
+        }else if(type == 8){
+            url = URLContent.getCet8Review(name,plan);
+        }
         LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
         task.execute(url);
 
@@ -182,12 +193,31 @@ public class LockScreenActivity extends AppCompatActivity implements LoadDataAsy
     public void onSuccess(String json) {
 
         if (!TextUtils.isEmpty(json)) {
-            Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
-            List<Cet4ReviewBean._$4Bean> wordlist = bean.get_$4();
-            Collections.shuffle(wordlist);
-            wordtran = wordlist.get(0).getExplaination();
-            wordmean = wordlist.get(0).getContent();
-            contentTv.setText(wordtran);
+            SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+            int type = sp.getInt("wordtype",4);
+            if(type == 4){
+                Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+                List<Cet4ReviewBean._$4Bean> wordlist = bean.get_$4();
+                Collections.shuffle(wordlist);
+                wordtran = wordlist.get(0).getExplaination();
+                wordmean = wordlist.get(0).getContent();
+                contentTv.setText(wordtran);
+            }else if(type == 6){
+                Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
+                List<Cet6ReviewBean._$6Bean> wordlist = bean.get_$6();
+                Collections.shuffle(wordlist);
+                wordtran = wordlist.get(0).getExplaination();
+                wordmean = wordlist.get(0).getContent();
+                contentTv.setText(wordtran);
+            }else if(type == 8){
+                HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
+                List<HeightwordReviewBean._$8Bean> wordlist = bean.get_$8();
+                Collections.shuffle(wordlist);
+                wordtran = wordlist.get(0).getExplaination();
+                wordmean = wordlist.get(0).getContent();
+                contentTv.setText(wordtran);
+            }
+
         }
     }
 }

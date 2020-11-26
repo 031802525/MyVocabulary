@@ -78,17 +78,29 @@ public class URLContent {
         return url;
     }
 
-    //    返回四级复习词包
+    //    返回考研复习词包
     public static String getCet8Review(String name,int num){
         String url = "http://119.29.189.107:1234/review8?name=id:"+name+"num="+num+".";
         return url;
     }
 
-//    返回英音发音
+//    根据中文意思返回三个相近的英文单词（从四级词包中获取）
+    public static String getNear4Word(String word){
+        String url = "http://119.29.189.107:1234/s4?word="+word;
+        return url;
+    }
 
+//    根据中文意思返回三个相近的英文单词（从六级词包中获取）
+    public static String getNear6Word(String word){
+        String url = "http://119.29.189.107:1234/s6?word="+word;
+        return url;
+    }
 
-//    返回美音发音
-
+//    根据中文意思返回三个相近的英文单词（从考研词包中获取）
+    public static String getNear8Word(String word){
+        String url = "http://119.29.189.107:1234/s8?word="+word;
+        return url;
+    }
 
 //      返回计划数
     public static String getPlanCount(String name){
@@ -111,6 +123,16 @@ public class URLContent {
 //    打卡
     public static String getDaka(String name){
         String url = "http://119.29.189.107:1234/changesign?name=id:"+name+".";
+        return url;
+    }
+//    获取英音
+    public static String getEngPronuns(String word){
+        String url = "http://dict.youdao.com/dictvoice?type=1&audio=+"+word;
+        return url;
+    }
+//    获取美音
+    public static String getAmrPronuns(String word){
+        String url = "http://dict.youdao.com/dictvoice?type=2&audio="+word;
         return url;
     }
 

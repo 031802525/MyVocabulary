@@ -68,7 +68,7 @@ public class AddAlarmActivity extends AppCompatActivity {
         if(finaltime>oneDaytimeMM){
             alarmcount = 1;
         }
-        Toast.makeText(AddAlarmActivity.this,"应用被打开了："+alarmcount+"次",Toast.LENGTH_LONG).show();
+//        Toast.makeText(AddAlarmActivity.this,"应用被打开了："+alarmcount+"次",Toast.LENGTH_LONG).show();
 
         if(alarmcount == 1){
             Intent intent = getIntent();

@@ -3,6 +3,7 @@ package com.example.desktop.My.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.desktop.MainActivity;
 import com.example.desktop.My.OnSignedSuccess;
 import com.example.desktop.My.adapter.AdapterDate;
 import com.example.desktop.My.util.DateUtil;
@@ -46,6 +48,8 @@ public class DakaCalendarActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.daka_iv_back:
+                Intent intent = new Intent(DakaCalendarActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
                 break;
         }

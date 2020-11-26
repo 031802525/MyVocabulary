@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgc"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/choose_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/deepblue">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择词书"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/choose_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <RelativeLayout
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/login_edittext"
+                        android:layout_margin="@dimen/dp_10"
+                        android:padding="@dimen/dp_10"
+                        >
+                        <ImageView
+                            android:id="@+id/tong0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/tong1"
+                            />
+                        <ImageView
+                            android:layout_marginTop="@dimen/dp_31"
+                            android:layout_width="@dimen/dp_120"
+                            android:layout_height="@dimen/dp_120"
+                            android:src="@mipmap/four2"
+                            android:layout_below="@+id/uf"
+                            />
+                        <Button
+                            android:id="@+id/uf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="大学四级"
+                            android:layout_toRightOf="@+id/tong0"
+                            android:padding="@dimen/dp_8"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:background="@drawable/login_edittext"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:gravity="center"
+                        android:background="@drawable/login_edittext"
+                        android:layout_margin="@dimen/dp_10"
+                        android:padding="@dimen/dp_10"
+                        >
+                        <ImageView
+                            android:id="@+id/tong1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/tong1"
+                            />
+                        <ImageView
+                            android:layout_width="@dimen/dp_150"
+                            android:layout_height="@dimen/dp_150"
+                            android:src="@mipmap/six"
+                            android:layout_below="@+id/us"
+                            />
+                        <Button
+                            android:id="@+id/us"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="大学六级"
+                            android:layout_toRightOf="@+id/tong1"
+                            android:padding="@dimen/dp_8"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:background="@drawable/login_edittext"
+                            />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/login_edittext"
+                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10">
+                    <ImageView
+                        android:id="@+id/tong2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/tong1"
+                        />
+                    <ImageView
+                        android:layout_width="@dimen/dp_150"
+                        android:layout_height="@dimen/dp_150"
+                        android:src="@mipmap/kaoyan"
+                        android:layout_below="@+id/uw"
+                        />
+                    <Button
+                        android:id="@+id/uw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="考研词汇"
+                        android:layout_toRightOf="@+id/tong2"
+                        android:padding="@dimen/dp_8"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:background="@drawable/login_edittext"
+
+                        />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前计划数为:"
+                        android:textSize="@dimen/sp_18"
+                        />
+
+                    <TextView
+                        android:id="@+id/plan_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_18"
+                        android:text="12"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前词书为:"
+                        android:textSize="@dimen/sp_18"
+                        />
+                    <TextView
+                        android:id="@+id/plan_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_18"
+                        android:text="大学四级"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="计划数量:"
+                        android:textSize="@dimen/sp_18"
+                        />
+                    <EditText
+                        android:id="@+id/choose_et"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="@dimen/dp_65"/>
+
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/comfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_btn"
+                    android:text="开始学习"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_margin="@dimen/dp_10"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

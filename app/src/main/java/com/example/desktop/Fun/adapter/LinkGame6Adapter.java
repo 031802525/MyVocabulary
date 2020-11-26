@@ -9,17 +9,18 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
 import com.example.desktop.R;
 
 import java.util.List;
 
-public class LinkGameExplainAdapter extends BaseAdapter {
+public class LinkGame6Adapter extends BaseAdapter {
 
     Context context;
-    List<Cet4ReviewBean._$4Bean> mDatas;
+    List<Cet6ReviewBean._$6Bean> mDatas;
     int selectItem = -1;
 
-    public LinkGameExplainAdapter(Context context, List<Cet4ReviewBean._$4Bean> mDatas) {
+    public LinkGame6Adapter(Context context, List<Cet6ReviewBean._$6Bean> mDatas) {
         this.context = context;
         this.mDatas = mDatas;
     }
@@ -61,13 +62,12 @@ public class LinkGameExplainAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) view.getTag();
         }
-        Cet4ReviewBean._$4Bean resultBean = mDatas.get(i);
-        holder.contentTv.setText(resultBean.getExplaination());
+        Cet6ReviewBean._$6Bean resultBean = mDatas.get(i);
+        holder.contentTv.setText(resultBean.getContent());
         if(selectItem == i){
             holder.contentTv.setTextColor(Color.BLUE);
         }else {
             holder.contentTv.setTextColor(Color.BLACK);
-
         }
         return view;
     }

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bgc">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,8 +23,8 @@
 
                 <ImageView
                     android:id="@+id/shouye_iv_label"
-                    android:layout_width="50dp"
-                    android:layout_height="65dp"
+                    android:layout_width="@dimen/dp_45"
+                    android:layout_height="@dimen/dp_60"
                     android:layout_centerInParent="true"
                     android:src="@mipmap/booklable" />
 
@@ -34,7 +35,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/dp_8">
 
                     <TextView
                         android:id="@+id/shouye_tv_labeltext"
@@ -42,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:text="2"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/sp_11"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/shouye_tv_month"
@@ -50,7 +51,7 @@
                         android:layout_height="wrap_content"
                         android:text="Aug"
                         android:textColor="@color/black"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/sp_11"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -63,19 +64,20 @@
                 android:layout_marginTop="@dimen/dp_30">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/shouye_tv_title"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_18"
                         android:text="Insist"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/sp_36"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/sp_16"
+                        android:layout_marginRight="@dimen/dp_60"
+                         />
 
                     <TextView
                         android:id="@+id/shouye_tv_detail"
@@ -103,6 +105,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/shouye_ll_begin"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/dp_230"
                         android:layout_marginLeft="@dimen/dp_18"
@@ -161,6 +164,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/shouye_ll_search"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_marginBottom="@dimen/dp_10"
@@ -197,6 +201,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/shouye_ll_wordlist"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_marginTop="@dimen/dp_10"
@@ -208,7 +213,7 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:id="@+id/shouyr_tv_wordlist"
+                                    android:id="@+id/shouye_tv_wordlist"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_23"
@@ -224,7 +229,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="@dimen/dp_10"
                                     android:layout_marginTop="@dimen/dp_23"
-                                    android:layout_toRightOf="@+id/shouyr_tv_wordlist"
+                                    android:layout_toRightOf="@+id/shouye_tv_wordlist"
                                     android:src="@mipmap/book" />
 
 
@@ -238,6 +243,7 @@
 
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/shouye_rl_translate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/login_edittext"

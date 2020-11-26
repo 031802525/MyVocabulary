@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_7"
+    android:layout_margin="@dimen/dp_5">
+    <TextView
+        android:id="@+id/english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How are you"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginLeft="@dimen/dp_10"
+        />
+    <TextView
+        android:id="@+id/chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好吗"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_18"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightpurple"
+        android:layout_marginTop="@dimen/dp_4"/>
+</LinearLayout>

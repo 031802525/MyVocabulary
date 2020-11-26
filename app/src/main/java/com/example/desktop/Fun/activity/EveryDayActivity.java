@@ -2,6 +2,8 @@ package com.example.desktop.Fun.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ImageView;
@@ -14,6 +16,7 @@ import com.example.desktop.Util.URLContent;
 import com.example.desktop.R;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -43,7 +46,7 @@ public class EveryDayActivity extends AppCompatActivity implements LoadDataAsync
 
 //        获取URL
 //        String url = URLContent.getEnglishDayURL();
-        String url = URLContent.getCet4Review("12",20);
+        String url = URLContent.getCet4Review("lyx",13);
 //        String url = URLContent.getChineseToEnglish(chineseUTF8);
 //        String url = URLContent.getWordTranslateURL("word");
 //        加载网络数据
@@ -67,6 +70,8 @@ public class EveryDayActivity extends AppCompatActivity implements LoadDataAsync
 //            String picURL = bean.getPicture4();
 //            Picasso.with(this).load(picURL).into(pictureIv);
 //            String mp3URL = bean.getTts();
+//            SharedPreferences everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
+//                String mp3URL = everySentence.getString("mp3url","");
 //            MediaPlayer mediaPlayer = new MediaPlayer();
 //            try {
 //                mediaPlayer.setDataSource(mp3URL);

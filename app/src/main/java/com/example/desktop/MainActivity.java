@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         createFragment();
 
         String url = URLContent.getEnglishDayURL();
-        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, true);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, false);
         task.execute(url);
 
 
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             count = 1;
         }
 //        Toast.makeText(MainActivity.this,"应用被打开了："+count+"次",Toast.LENGTH_LONG).show();
-        Toast.makeText(MainActivity.this,"当前时间："+instanceTime+",  上次打开时间："+currenttime+", 相差时间："+finaltime,Toast.LENGTH_LONG).show();
+//        Toast.makeText(MainActivity.this,"当前时间："+instanceTime+",  上次打开时间："+currenttime+", 相差时间："+finaltime,Toast.LENGTH_LONG).show();
 
         if(count == 1){
             Intent intent = new Intent(MainActivity.this, AddAlarmActivity.class);
@@ -189,10 +189,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
 
 //    防止返回键的触发
-//    @Override
-//    public void onBackPressed() {
-//        // do nothing
-//    }
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 
 
     @Override

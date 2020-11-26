@@ -35,4 +35,10 @@ public class DateUtil {
         int day = a.get(Calendar.DAY_OF_MONTH);
         return day;
     }
+//      获取当前月
+    public static int getCurrentMonth(){
+        Calendar a = Calendar.getInstance();
+        int month = a.get(Calendar.MONTH);
+        return month+1;
+    }
 }

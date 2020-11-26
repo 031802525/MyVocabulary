@@ -80,7 +80,7 @@
                                     android:layout_height="0dp"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="已掌握"
+                                    android:text="学习中"
                                     android:textSize="@dimen/sp_16"
 
                                     />

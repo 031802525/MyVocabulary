@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.desktop.Bean.userbean.LoginUserBean;
+import com.example.desktop.Relearn.ChooseWordbookActivity;
 import com.example.desktop.Util.LoadDataAsyncTask;
 import com.example.desktop.Util.URLContent;
 import com.example.desktop.MainActivity;
@@ -210,7 +211,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 editor.commit();
                             }
                             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
-                            Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent1 = new Intent(LoginActivity.this, ChooseWordbookActivity.class);
                             startActivity(intent1);
                             finish();
                         }
