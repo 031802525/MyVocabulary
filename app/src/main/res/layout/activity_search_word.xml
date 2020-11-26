@@ -88,7 +88,6 @@
 
     </RelativeLayout>
     <TextView
-        android:id="@+id/search_tv_mean"
         android:layout_marginTop="@dimen/dp_10"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_1"
@@ -98,6 +97,7 @@
         android:layout_marginRight="@dimen/dp_10"
         />
     <TextView
+        android:id="@+id/search_tv_mean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="v.坚持，坚决要求"

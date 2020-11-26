@@ -46,6 +46,7 @@
                     >
 
                     <RelativeLayout
+                        android:id="@+id/book1_rl"
                         android:layout_marginTop="@dimen/dp_20"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -82,6 +83,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/book2_rl"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -129,6 +131,7 @@
                 android:orientation="vertical"
                 >
                 <RelativeLayout
+                    android:id="@+id/book3_rl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

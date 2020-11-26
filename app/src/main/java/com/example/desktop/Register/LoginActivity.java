@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             R.drawable.bgc4,R.drawable.bgc5,R.drawable.bgc6,
             R.drawable.bgc7};
     private SharedPreferences sp;
+    private SharedPreferences user;
     private String okName,okPwd;
 
 
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        初始化控件
         init();
         sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        user = getSharedPreferences("user",Context.MODE_PRIVATE);
         setSp();
 //        设置背景图片随机选择
         setLoginBackgroud();
@@ -62,12 +64,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void setSp() {
-        if(sp.getBoolean("ISCHECK",false)){
+        if(user.getBoolean("ISCHECK",false)){
 //            设置默认是记录密码状态
             rememberCb.setChecked(true);
-            username.setText(sp.getString("USER_NAME",""));
-            userpwd.setText(sp.getString("PASSWORD",""));
-            if(sp.getBoolean("AUTO_ISCHECK",false)){
+            username.setText(user.getString("use",""));
+            userpwd.setText(user.getString("pwd",""));
+            if(user.getBoolean("AUTO_ISCHECK",false)){
                 autoCb.setChecked(true);
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -98,9 +100,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(rememberCb.isChecked()){
-                    sp.edit().putBoolean("ISCHECK",true).commit();
+                    user.edit().putBoolean("ISCHECK",true).commit();
                 }else {
-                    sp.edit().putBoolean("ISCHECK",false).commit();
+                    user.edit().putBoolean("ISCHECK",false).commit();
                 }
             }
         });
@@ -109,9 +111,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(autoCb.isChecked()){
-                    sp.edit().putBoolean("AUTO_ISCHECK",true).commit();
+                    user.edit().putBoolean("AUTO_ISCHECK",true).commit();
                 }else {
-                    sp.edit().putBoolean("AUTO_ISCHECK",false).commit();
+                    user.edit().putBoolean("AUTO_ISCHECK",false).commit();
                 }
             }
         });
@@ -203,16 +205,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(password)) {
                         if(name.equals(okName) && password.equals(okPwd)){
-
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putString("USER_NAME", okName);
+                            editor.putString("PASSWORD", okPwd);
+                            editor.commit();
                             if (rememberCb.isChecked()) {
-                                SharedPreferences.Editor editor = sp.edit();
-                                editor.putString("USER_NAME", okName);
-                                editor.putString("PASSWORD", okPwd);
-                                editor.commit();
+                                SharedPreferences.Editor usereditor = user.edit();
+                                usereditor.putString("use",okName);
+                                usereditor.putString("pwd",okPwd);
+                                usereditor.commit();
                             }
                             Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
-                            Intent intent1 = new Intent(LoginActivity.this, ChooseWordbookActivity.class);
-                            startActivity(intent1);
+                            SharedPreferences sp = getSharedPreferences("count",MODE_PRIVATE);
+                            int count = sp.getInt("count",0);
+                            if(count == 0){
+                                Intent intent1 = new Intent(LoginActivity.this, ChooseWordbookActivity.class);
+                                startActivity(intent1);
+                            }else{
+                                Intent intent1 = new Intent(LoginActivity.this,MainActivity.class);
+                                startActivity(intent1);
+                            }
                             finish();
                         }
                         else {

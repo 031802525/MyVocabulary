@@ -80,7 +80,7 @@ public class WordListActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initDatas() {
-        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         String name = sp.getString("USER_NAME","");
         int type = sp.getInt("wordtype",4);
         int plan = sp.getInt("plan",10);

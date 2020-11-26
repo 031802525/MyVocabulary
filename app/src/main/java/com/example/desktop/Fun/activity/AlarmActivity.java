@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.desktop.Fun.dialog.CommomDialog;
@@ -39,6 +40,7 @@ public class AlarmActivity extends AppCompatActivity {
     private List<ClockBean> clockBeanList=new ArrayList<>();
     private ListView alarmList;
     private ImageView addalarmIv;
+    private TextView backTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,13 @@ public class AlarmActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(AlarmActivity.this,AddAlarmActivity.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        backTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 finish();
             }
         });
@@ -119,6 +128,7 @@ public class AlarmActivity extends AppCompatActivity {
 
         alarmList = findViewById(R.id.alarm_lv_alarmlist);
         addalarmIv = findViewById(R.id.alarm_iv_addalarm);
+        backTv = findViewById(R.id.return_tv);
 
     }
 

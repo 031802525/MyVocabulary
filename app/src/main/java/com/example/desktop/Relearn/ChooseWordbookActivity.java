@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,9 +30,13 @@ public class ChooseWordbookActivity extends AppCompatActivity implements View.On
     private Button study4Btn,study6Btn,study8Btn,confirmBtn;
     private EditText inputPlanEt;
     private TextView plancount,planbook;
+    private RelativeLayout book1Rl,book2Rl,book3Rl;
     private boolean is4Press = false;
     private boolean is6Press = false;
     private boolean is8Press = false;
+    private boolean isbook1 = false;
+    private boolean isbook2 = false;
+    private boolean isbook3 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +44,7 @@ public class ChooseWordbookActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_choose_wordbook);
 
         init();
-        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         String name = sp.getString("USER_NAME","");
         String url = URLContent.getPlanCount(name);
         LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
@@ -73,47 +78,56 @@ public class ChooseWordbookActivity extends AppCompatActivity implements View.On
         inputPlanEt = findViewById(R.id.choose_et);
         plancount = findViewById(R.id.plan_count);
         planbook = findViewById(R.id.plan_book);
+        book1Rl = findViewById(R.id.book1_rl);
+        book2Rl = findViewById(R.id.book2_rl);
+        book3Rl = findViewById(R.id.book3_rl);
 
-        study4Btn.setOnClickListener(this);
-        study6Btn.setOnClickListener(this);
-        study8Btn.setOnClickListener(this);
         confirmBtn.setOnClickListener(this);
+        book1Rl.setOnClickListener(this);
+        book2Rl.setOnClickListener(this);
+        book3Rl.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.uf:
-                if(!is4Press || is6Press || is8Press){
-                    study6Btn.setEnabled(false);
-                    study8Btn.setEnabled(false);
-                    is4Press = true;
+            case R.id.book1_rl:
+                if(!isbook1){
+                    book1Rl.setBackgroundResource(R.drawable.item);
+                    book2Rl.setEnabled(false);
+                    book3Rl.setEnabled(false);
+                    isbook1 = true;
                 }else {
-                    study6Btn.setEnabled(true);
-                    study8Btn.setEnabled(true);
-                    is4Press = false;
+                    book1Rl.setBackgroundResource(R.drawable.login_edittext);
+                    book2Rl.setEnabled(true);
+                    book3Rl.setEnabled(true);
+                    isbook1 = false;
                 }
                 break;
-            case R.id.us:
-                if(is4Press || !is6Press || is8Press){
-                    study4Btn.setEnabled(false);
-                    study8Btn.setEnabled(false);
-                    is6Press = true;
+            case R.id.book2_rl:
+                if(!isbook2){
+                    book2Rl.setBackgroundResource(R.drawable.item);
+                    book1Rl.setEnabled(false);
+                    book3Rl.setEnabled(false);
+                    isbook2 = true;
                 }else {
-                    study4Btn.setEnabled(true);
-                    study8Btn.setEnabled(true);
-                    is6Press = false;
+                    book2Rl.setBackgroundResource(R.drawable.login_edittext);
+                    book1Rl.setEnabled(true);
+                    book3Rl.setEnabled(true);
+                    isbook2 = false;
                 }
                 break;
-            case R.id.uw:
-                if(is4Press || is6Press || !is8Press){
-                    study6Btn.setEnabled(false);
-                    study4Btn.setEnabled(false);
-                    is8Press = true;
+            case R.id.book3_rl:
+                if(!isbook3){
+                    book3Rl.setBackgroundResource(R.drawable.item);
+                    book1Rl.setEnabled(false);
+                    book2Rl.setEnabled(false);
+                    isbook3 = true;
                 }else {
-                    study6Btn.setEnabled(true);
-                    study4Btn.setEnabled(true);
-                    is8Press = false;
+                    book3Rl.setBackgroundResource(R.drawable.login_edittext);
+                    book1Rl.setEnabled(true);
+                    book2Rl.setEnabled(true);
+                    isbook3 = false;
                 }
                 break;
             case R.id.comfirm:
@@ -135,11 +149,11 @@ public class ChooseWordbookActivity extends AppCompatActivity implements View.On
                     SharedPreferences.Editor editor = sp.edit();
                     String name = sp.getString("USER_NAME","");
                     String url = URLContent.getUpdatePlanCount(name,plan);
-                    if(is4Press){
+                    if(isbook1){
                         editor.putInt("wordtype",4);
-                    }else if(is6Press){
+                    }else if(isbook2){
                         editor.putInt("wordtype",6);
-                    }else if(is8Press){
+                    }else if(isbook3){
                         editor.putInt("wordtype",8);
                     }else {
                         editor.putInt("wordtype",0);
@@ -212,10 +226,10 @@ public class ChooseWordbookActivity extends AppCompatActivity implements View.On
         }
     }
 
-//    屏蔽返回键
-
     @Override
     public void onBackPressed() {
-//        do nothing
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

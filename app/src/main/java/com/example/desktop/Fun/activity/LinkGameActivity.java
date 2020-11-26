@@ -60,7 +60,7 @@ public class LinkGameActivity extends AppCompatActivity implements View.OnClickL
 
 
         init();
-        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         int type = sp.getInt("wordtype",4);
         if(type == 4){
             wordmDatas4 = new ArrayList<>();
@@ -81,8 +81,8 @@ public class LinkGameActivity extends AppCompatActivity implements View.OnClickL
             explainmDatas8 = new ArrayList<>();
             wordadapter8 = new LinkGame8Adapter(this, wordmDatas8);
             explainAdapter8 = new LinkGameExplain8Adapter(this, explainmDatas8);
-            leftwordspellLv.setAdapter(wordadapter4);
-            rightwordtranslateLv.setAdapter(explainAdapter4);
+            leftwordspellLv.setAdapter(wordadapter8);
+            rightwordtranslateLv.setAdapter(explainAdapter8);
         }
 //        加载复习数据 默认四级词包
         initDatas();
