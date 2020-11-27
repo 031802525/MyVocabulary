@@ -19,6 +19,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.desktop.Bean.planbean.DakaBean;
 import com.example.desktop.Bean.planbean.GetDakaCountBean;
+import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
+import com.example.desktop.Bean.wordbookbean.HeightwordReviewBean;
 import com.example.desktop.My.activity.DakaCalendarActivity;
 import com.example.desktop.My.activity.FinishActivity;
 import com.example.desktop.My.util.DateUtil;
@@ -30,6 +33,8 @@ import com.example.desktop.Util.LoadDataAsyncTask;
 import com.example.desktop.Util.URLContent;
 import com.google.gson.Gson;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 
@@ -53,6 +58,8 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+//        initWordCount();
+//        initDakaCount();
         return inflater.inflate(R.layout.fragment_me, container, false);
     }
 
@@ -67,10 +74,70 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         idTv.setText(sp.getString("USER_NAME","用户名"));
         holdTv.setText(sp.getInt("nowwordnum",10)+"");
-        SharedPreferences spc = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
-        int day = spc.getInt("count",0);
-        dayTv.setText(day+"");
+//        SharedPreferences spc = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
+//        int day = spc.getInt("count",0);
+//        dayTv.setText(day+"");
+        dayTv.setText(sp.getInt("DaKa",0)+"");
+        holdTv.setText(sp.getInt("WordNum",0)+"");
+        initWordCount();
+        initDakaCount();
     }
+
+    private void initWordCount() {
+        SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String name = sp.getString("USER_NAME","");
+        int type = sp.getInt("wordtype",4);
+        int plan = sp.getInt("plan",10);
+        String url = "";
+        if(type == 4){
+            url = URLContent.getCet4Review(name,plan);
+        }else if(type == 6){
+            url = URLContent.getCet6Review(name,plan);
+        }else if(type == 8){
+            url = URLContent.getCet8Review(name,plan);
+        }
+        LoadDataAsyncTask task = new LoadDataAsyncTask(getActivity(), new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if(!TextUtils.isEmpty(json)){
+                    SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                int type = sp.getInt("wordtype", 4);
+                if (type == 4) {
+                    Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+                    holdTv.setText(bean.getNum() + "");
+                } else if (type == 6) {
+                    Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
+                    holdTv.setText(bean.getNum() + "");
+                } else if (type == 8) {
+                    HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
+                    holdTv.setText(bean.getNum() + "");
+                }
+            } else {
+                    holdTv.setText(0+ "");
+                }
+            }
+        }, false);
+        task.execute(url);
+    }
+
+    private void initDakaCount() {
+        SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String name = sp.getString("USER_NAME","");
+        String url = URLContent.getDakadayCount(name);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(getActivity(), new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if (!TextUtils.isEmpty(json)) {
+                    GetDakaCountBean bean = new Gson().fromJson(json, GetDakaCountBean.class);
+                    dayTv.setText(bean.getTime()+"");
+                }else {
+                    dayTv.setText(0+"");
+                }
+            }
+        }, false);
+        task.execute(url);
+    }
+
     private void setIdImages() {
         Random r = new Random();
         int random = r.nextInt(11);  // [0,7)

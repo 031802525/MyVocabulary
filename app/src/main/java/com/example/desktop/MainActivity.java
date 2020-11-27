@@ -1,5 +1,6 @@
 package com.example.desktop;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.desktop.Bean.planbean.GetDakaCountBean;
+import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
+import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
+import com.example.desktop.Bean.wordbookbean.HeightwordReviewBean;
 import com.example.desktop.Fun.activity.AddAlarmActivity;
 import com.example.desktop.Bean.translatebean.EverydaySentenceBean;
 import com.example.desktop.Fun.service.AlarmService;
@@ -27,7 +32,7 @@ import com.google.gson.Gson;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener , LoadDataAsyncTask.OnGetNetDataListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener  {
 
     RadioGroup mainRg;
     Fragment ShouyeFrag, QuweiFrag,FuxiFrag,MeFrag;
@@ -64,10 +69,94 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         createFragment();
 
         String url = URLContent.getEnglishDayURL();
-        LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, false);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if(!TextUtils.isEmpty(json)){
+                    EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+                    String sentence = bean.getNote();
+                    String translation = bean.getContent();
+                    String picURL = bean.getPicture4();
+                    String mp3URL = bean.getTts();
+                    everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
+                    everySentenceedit = everySentence.edit();
+
+                    everySentenceedit.putString("sentence",sentence);
+                    everySentenceedit.putString("translation",translation);
+                    everySentenceedit.putString("picurl",picURL);
+                    everySentenceedit.putString("mp3url",mp3URL);
+
+                    everySentenceedit.commit();
+
+
+                }
+            }
+        }, false);
         task.execute(url);
 
+//        initDakaCount();
+//        initWordCount();
 
+    }
+
+    private void initWordCount() {
+        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String name = sp.getString("USER_NAME","");
+        int type = sp.getInt("wordtype",4);
+        int plan = sp.getInt("plan",10);
+        String url = "";
+        if(type == 4){
+            url = URLContent.getCet4Review(name,plan);
+        }else if(type == 6){
+            url = URLContent.getCet6Review(name,plan);
+        }else if(type == 8){
+            url = URLContent.getCet8Review(name,plan);
+        }
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if(!TextUtils.isEmpty(json)){
+                    SharedPreferences sp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+                    int type = sp.getInt("wordtype", 4);
+                    if (type == 4) {
+                        Cet4ReviewBean bean = new Gson().fromJson(json, Cet4ReviewBean.class);
+                        editor.putInt("WordNum",bean.getNum());
+                        editor.commit();
+                    } else if (type == 6) {
+                        Cet6ReviewBean bean = new Gson().fromJson(json, Cet6ReviewBean.class);
+                        editor.putInt("WordNum",bean.getNum());
+                        editor.commit();
+                    } else if (type == 8) {
+                        HeightwordReviewBean bean = new Gson().fromJson(json, HeightwordReviewBean.class);
+                        editor.putInt("WordNum",bean.getNum());
+                        editor.commit();
+                    }
+                }else{
+                    editor.putInt("WordNum",0);
+                }
+
+            }
+        }, false);
+        task.execute(url);
+    }
+
+    private void initDakaCount() {
+        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sp.edit();
+        String name = sp.getString("USER_NAME","");
+        String url = URLContent.getDakadayCount(name);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if (!TextUtils.isEmpty(json)) {
+                    GetDakaCountBean bean = new Gson().fromJson(json, GetDakaCountBean.class);
+                    editor.putInt("DaKa",bean.getTime());
+                    editor.commit();
+                }
+            }
+        }, false);
+        task.execute(url);
     }
 
     private void createFragment() {
@@ -195,25 +284,4 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     }
 
 
-    @Override
-    public void onSuccess(String json) {
-        if(!TextUtils.isEmpty(json)){
-            EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
-            String sentence = bean.getNote();
-            String translation = bean.getContent();
-            String picURL = bean.getPicture4();
-            String mp3URL = bean.getTts();
-            everySentence = this.getSharedPreferences("everysentence",MODE_PRIVATE);
-            everySentenceedit = everySentence.edit();
-
-            everySentenceedit.putString("sentence",sentence);
-            everySentenceedit.putString("translation",translation);
-            everySentenceedit.putString("picurl",picURL);
-            everySentenceedit.putString("mp3url",mp3URL);
-
-            everySentenceedit.commit();
-
-
-        }
-    }
 }

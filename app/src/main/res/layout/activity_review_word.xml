@@ -37,7 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp_20"
             android:text="cat"
-            android:textSize="@dimen/sp_48"
+            android:textSize="@dimen/sp_30"
             android:gravity="center"
             />
 
@@ -49,7 +49,7 @@
             android:layout_below="@id/duetoen_tv_word"
             android:layout_centerHorizontal="true"
             android:text=" /kæt/"
-            android:textSize="@dimen/sp_30"
+            android:textSize="@dimen/sp_22"
             android:layout_marginTop="@dimen/dp_10"
             />
         <TextView
@@ -96,7 +96,7 @@
             android:padding="@dimen/dp_15"
             android:textAllCaps="false"
             android:text="n.东西"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             />
         <Button
             android:id="@+id/mean2"
@@ -106,7 +106,7 @@
             android:padding="@dimen/dp_15"
             android:textAllCaps="false"
             android:text="n.树叶"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             android:layout_marginTop="@dimen/dp_15"
 
             />
@@ -118,7 +118,7 @@
             android:padding="@dimen/dp_15"
             android:textAllCaps="false"
             android:text="v.吃"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             android:layout_marginTop="@dimen/dp_15"
             />
         <Button
@@ -129,7 +129,7 @@
             android:padding="@dimen/dp_15"
             android:textAllCaps="false"
             android:text="n.猫"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             android:layout_marginTop="@dimen/dp_15"
             />
 

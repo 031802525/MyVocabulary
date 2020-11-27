@@ -50,12 +50,11 @@ public class FinishActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.finish_btn:
+                initDaka();
                     int day = DateUtil.getCurrentday();
                     isCheck.add(day);
                     finishBtn.setText("今日已打卡");
@@ -81,5 +80,20 @@ public class FinishActivity extends AppCompatActivity implements View.OnClickLis
                     finish();
                 break;
         }
+    }
+
+    private void initDaka() {
+        SharedPreferences sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String name = sp.getString("USER_NAME","");
+        String url = URLContent.getDaka(name);
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if (!TextUtils.isEmpty(json)) {
+//
+                }
+            }
+        }, false);
+        task.execute(url);
     }
 }

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.desktop.Bean.translatebean.EnglishToChineseWordBean;
+import com.example.desktop.Bean.translatebean.TranslationErroBean;
 import com.example.desktop.R;
 import com.example.desktop.Shouye.adapter.SearchWordAdapter;
 import com.example.desktop.Util.LoadDataAsyncTask;
@@ -39,6 +40,7 @@ public class SearchWordActivity extends AppCompatActivity implements View.OnClic
     private String word = "";
     List<EnglishToChineseWordBean.WebBean> mDatas;
     private SearchWordAdapter adapter;
+    private boolean isHave = true;
 
 
     @Override
@@ -84,18 +86,25 @@ public class SearchWordActivity extends AppCompatActivity implements View.OnClic
                                 mDatas.clear();
                             }
                             EnglishToChineseWordBean bean = new Gson().fromJson(json, EnglishToChineseWordBean.class);
-                            wordTv.setText(bean.getQuery());
-                            List<String> translation = bean.getTranslation();
-                            String s = "";
-                            for (int i = 0; i < translation.size(); i++) {
-                                s = s + translation.get(i) + "\n";
+                            if (bean.isIsWord()) {
+                                wordTv.setText(bean.getQuery());
+                                List<String> translation = bean.getTranslation();
+                                String s = "";
+                                for (int i = 0; i < translation.size(); i++) {
+                                    s = s + translation.get(i) + "\n";
+                                }
+                                meanTv.setText(s);
+                                List<EnglishToChineseWordBean.WebBean> list = bean.getWeb();
+                                for (int i = 0; i < list.size(); i++) {
+                                    mDatas.add(list.get(i));
+                                }
+                                adapter.notifyDataSetChanged();
+                            }else {
+                                wordTv.setText(word);
+                                meanTv.setText(word);
+                                meanTv.setText("查无此词，请输入正确的英文单词或中文！");
                             }
-                            meanTv.setText(s);
-                            List<EnglishToChineseWordBean.WebBean> list = bean.getWeb();
-                            for (int i = 0; i < list.size(); i++) {
-                                mDatas.add(list.get(i));
-                            }
-                            adapter.notifyDataSetChanged();
+
                         }
                     }
                 }, false);

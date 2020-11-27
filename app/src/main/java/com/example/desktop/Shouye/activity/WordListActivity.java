@@ -87,11 +87,11 @@ public class WordListActivity extends AppCompatActivity implements View.OnClickL
         int num = sp.getInt("nowwordnum",plan);
         String url = "";
         if(type == 4){
-            url = URLContent.getCet4Review(name,num);
+            url = URLContent.getCet4Review(name,plan);
         }else if(type == 6){
-            url = URLContent.getCet6Review(name,num);
+            url = URLContent.getCet6Review(name,plan);
         }else if(type == 8){
-            url = URLContent.getCet8Review(name,num);
+            url = URLContent.getCet8Review(name,plan);
         }
         LoadDataAsyncTask task = new LoadDataAsyncTask(this, this, false);
         task.execute(url);

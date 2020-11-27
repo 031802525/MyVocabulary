@@ -44,7 +44,7 @@ public class DakaCalendarActivity extends AppCompatActivity implements View.OnCl
             }
         });
         SharedPreferences sp = this.getSharedPreferences("data", Context.MODE_PRIVATE);
-        Toast.makeText(this,"打卡天数："+sp.getInt("count",0),Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"打卡天数："+sp.getInt("count",0),Toast.LENGTH_SHORT).show();
         SharedPreferences everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
         String picURL = everySentence.getString("picurl","");
         if(!TextUtils.isEmpty(picURL)){
