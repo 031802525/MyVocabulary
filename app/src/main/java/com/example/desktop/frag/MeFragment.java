@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,18 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.desktop.Bean.planbean.DakaBean;
+import com.example.desktop.Bean.planbean.GetDakaCountBean;
 import com.example.desktop.My.activity.DakaCalendarActivity;
 import com.example.desktop.My.activity.FinishActivity;
+import com.example.desktop.My.util.DateUtil;
 import com.example.desktop.R;
 import com.example.desktop.Register.LoginActivity;
 import com.example.desktop.Relearn.ChooseWordbookActivity;
 import com.example.desktop.Shouye.activity.WordListActivity;
+import com.example.desktop.Util.LoadDataAsyncTask;
+import com.example.desktop.Util.URLContent;
+import com.google.gson.Gson;
 
 import java.util.Random;
 
@@ -63,9 +70,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         SharedPreferences spc = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
         int day = spc.getInt("count",0);
         dayTv.setText(day+"");
-
     }
-
     private void setIdImages() {
         Random r = new Random();
         int random = r.nextInt(11);  // [0,7)
@@ -116,9 +121,15 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent4);
                 break;
             case R.id.me_iv_dakabtn:
-//                Intent intent = new Intent(getActivity(), FinishActivity.class);
-//                startActivity(intent);
-                Toast.makeText(getContext(),"请从学习完单词再来打卡~",Toast.LENGTH_SHORT).show();
+                int day = DateUtil.getCurrentday();
+                SharedPreferences sp = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
+                int lastDay = sp.getInt("day",0);
+                if(lastDay == day) {
+                    Intent intent = new Intent(getActivity(), FinishActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getContext(),"请从学习完单词再来打卡~",Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
