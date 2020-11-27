@@ -16,12 +16,16 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.desktop.Bean.translatebean.EverydaySentenceBean;
 import com.example.desktop.My.util.DateUtil;
 import com.example.desktop.R;
 import com.example.desktop.Shouye.activity.ChineseToEnglishActivity;
 import com.example.desktop.Shouye.activity.LearnWordActivity;
 import com.example.desktop.Shouye.activity.SearchWordActivity;
 import com.example.desktop.Shouye.activity.WordListActivity;
+import com.example.desktop.Util.LoadDataAsyncTask;
+import com.example.desktop.Util.URLContent;
+import com.google.gson.Gson;
 
 
 public class ShouyeFragment extends Fragment implements View.OnClickListener {
@@ -46,14 +50,35 @@ public class ShouyeFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 //        初始化控件
         init();
-        SharedPreferences sp = getActivity().getSharedPreferences("everysentence", Context.MODE_PRIVATE);
-        if(!TextUtils.isEmpty(sp.getString("sentence",""))){
-            titleTv.setText("     "+sp.getString("sentence",""));
-            detailTv.setText(sp.getString("translation",""));
-            dateTv.setText(DateUtil.getCurrentday()+"");
-            monthTv.setText(DateUtil.getCurrentMonth()+"");
-        }
+//        SharedPreferences sp = getActivity().getSharedPreferences("everysentence", Context.MODE_PRIVATE);
+//        if(!TextUtils.isEmpty(sp.getString("sentence",""))){
+//            titleTv.setText("     "+sp.getString("sentence",""));
+//            detailTv.setText(sp.getString("translation",""));
+//            dateTv.setText(DateUtil.getCurrentday()+"");
+//            monthTv.setText(DateUtil.getCurrentMonth()+"");
+//        }
 
+        initEveryDay();
+
+    }
+
+    private void initEveryDay() {
+        String url = URLContent.getEnglishDayURL();
+        LoadDataAsyncTask task = new LoadDataAsyncTask(getContext(), new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if(!TextUtils.isEmpty(json)){
+                    EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+                    String sentence = bean.getNote();
+                    String translation = bean.getContent();
+                    titleTv.setText("     "+sentence);
+                    detailTv.setText(translation);
+                    dateTv.setText(DateUtil.getCurrentday()+"");
+                    monthTv.setText(DateUtil.getCurrentMonth()+"");
+                }
+            }
+        }, false);
+        task.execute(url);
     }
 
     private void init() {

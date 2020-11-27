@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.desktop.Bean.translatebean.EverydaySentenceBean;
 import com.example.desktop.Bean.wordbookbean.Cet4ReviewBean;
 import com.example.desktop.Bean.wordbookbean.Cet6ReviewBean;
 import com.example.desktop.Bean.wordbookbean.HeightwordReviewBean;
@@ -82,7 +83,7 @@ public class LockScreenActivity extends AppCompatActivity implements LoadDataAsy
         }
 
 //        展示图片
-        showImage();
+        initDaySentence();
 
         inputWord.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -126,6 +127,31 @@ public class LockScreenActivity extends AppCompatActivity implements LoadDataAsy
 
             }
         });
+    }
+
+    private void initDaySentence() {
+        String url = URLContent.getEnglishDayURL();
+        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+            @Override
+            public void onSuccess(String json) {
+                if(!TextUtils.isEmpty(json)){
+                    EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+                    String sentence = bean.getNote();
+                    String translation = bean.getContent();
+                    String picURL = bean.getPicture4();
+                    String mp3URL = bean.getTts();
+                    sentenceTv.setText(sentence);
+                    translationTv.setText(translation);
+                    if(!TextUtils.isEmpty(picURL)){
+                        Picasso.with(getApplicationContext()).load(picURL).into(imageIv);
+                    }else {
+                        imageIv.setBackgroundResource(R.mipmap.fun);
+                    }
+                }
+            }
+        }, false);
+        task.execute(url);
+
     }
 
     private void showImage() {
@@ -218,6 +244,9 @@ public class LockScreenActivity extends AppCompatActivity implements LoadDataAsy
                 contentTv.setText(wordtran);
             }
 
+        }else{
+            wordtran = translation;
+            wordmean = word;
         }
     }
 }

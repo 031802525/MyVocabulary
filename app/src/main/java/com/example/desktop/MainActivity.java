@@ -68,31 +68,31 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 //        创建Fragment并加入MainActivity
         createFragment();
 
-        String url = URLContent.getEnglishDayURL();
-        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
-            @Override
-            public void onSuccess(String json) {
-                if(!TextUtils.isEmpty(json)){
-                    EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
-                    String sentence = bean.getNote();
-                    String translation = bean.getContent();
-                    String picURL = bean.getPicture4();
-                    String mp3URL = bean.getTts();
-                    everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
-                    everySentenceedit = everySentence.edit();
-
-                    everySentenceedit.putString("sentence",sentence);
-                    everySentenceedit.putString("translation",translation);
-                    everySentenceedit.putString("picurl",picURL);
-                    everySentenceedit.putString("mp3url",mp3URL);
-
-                    everySentenceedit.commit();
-
-
-                }
-            }
-        }, false);
-        task.execute(url);
+//        String url = URLContent.getEnglishDayURL();
+//        LoadDataAsyncTask task = new LoadDataAsyncTask(this, new LoadDataAsyncTask.OnGetNetDataListener() {
+//            @Override
+//            public void onSuccess(String json) {
+//                if(!TextUtils.isEmpty(json)){
+//                    EverydaySentenceBean bean = new Gson().fromJson(json, EverydaySentenceBean.class);
+//                    String sentence = bean.getNote();
+//                    String translation = bean.getContent();
+//                    String picURL = bean.getPicture4();
+//                    String mp3URL = bean.getTts();
+//                    everySentence = getSharedPreferences("everysentence",MODE_PRIVATE);
+//                    everySentenceedit = everySentence.edit();
+//
+//                    everySentenceedit.putString("sentence",sentence);
+//                    everySentenceedit.putString("translation",translation);
+//                    everySentenceedit.putString("picurl",picURL);
+//                    everySentenceedit.putString("mp3url",mp3URL);
+//
+//                    everySentenceedit.commit();
+//
+//
+//                }
+//            }
+//        }, false);
+//        task.execute(url);
 
 //        initDakaCount();
 //        initWordCount();
