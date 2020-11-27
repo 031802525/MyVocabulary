@@ -201,10 +201,10 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         }
     }
     private void clear(){
-        SharedPreferences sp = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        SharedPreferences sp = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString("USER_NAME","");
-        editor.putString("PASSWORD","");
+        editor.putString("use","");
+        editor.putString("pwd","");
         editor.putBoolean("ISCHECK",false);
         editor.putBoolean("AUTO_ISCHECK",false);
         editor.commit();
